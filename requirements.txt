@@ -1,0 +1,16 @@
+# SlackGNN development environment.
+# Interpreter: Python 3.11.
+#
+# torch-geometric 2.8 supports PyTorch 2.9 through 2.12. The upper bound
+# keeps a newer PyTorch release from being resolved ahead of that window.
+# Install a CUDA wheel from https://pytorch.org/get-started/locally/ before
+# this file when the default PyPI torch build is not the one you need.
+#
+# Core PyG operators ship with torch-geometric. Optional accelerated
+# extensions (pyg-lib, torch-scatter, torch-sparse) are outside this scaffold.
+
+torch>=2.9,<2.13
+torch-geometric>=2.8,<2.9
+networkx>=3.4,<4
+matplotlib>=3.8,<4
+pytest>=9.0,<10

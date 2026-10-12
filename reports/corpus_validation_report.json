@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "designs": [
+    "aes",
+    "gcd",
+    "ibex",
+    "jpeg"
+  ],
+  "design_count": 4,
+  "node_totals": 70678,
+  "edge_totals": 166222,
+  "label_totals": 22,
+  "positive_labels": 16,
+  "negative_labels": 6,
+  "design_reports": [
+    {
+      "design_name": "aes",
+      "passed": true,
+      "errors": [],
+      "node_count": 15868,
+      "edge_count": 38215,
+      "label_count": 4,
+      "positive_slack_count": 3,
+      "negative_slack_count": 1
+    },
+    {
+      "design_name": "gcd",
+      "passed": true,
+      "errors": [],
+      "node_count": 527,
+      "edge_count": 928,
+      "label_count": 5,
+      "positive_slack_count": 3,
+      "negative_slack_count": 2
+    },
+    {
+      "design_name": "ibex",
+      "passed": true,
+      "errors": [],
+      "node_count": 18000,
+      "edge_count": 44436,
+      "label_count": 7,
+      "positive_slack_count": 5,
+      "negative_slack_count": 2
+    },
+    {
+      "design_name": "jpeg",
+      "passed": true,
+      "errors": [],
+      "node_count": 36283,
+      "edge_count": 82643,
+      "label_count": 6,
+      "positive_slack_count": 5,
+      "negative_slack_count": 1
+    }
+  ]
+}

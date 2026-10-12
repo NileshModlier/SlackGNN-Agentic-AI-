@@ -1,0 +1,49 @@
+{
+  "paths": [
+    {
+      "startpoint": "resp_rdy",
+      "endpoint": "ctrl.state.out[0]$_DFF_P_",
+      "path_group": "core_clock",
+      "path_type": "min",
+      "arrival_time": 0.8,
+      "required_time": 0.27,
+      "slack": 0.53
+    },
+    {
+      "startpoint": "ctrl.state.out[1]$_DFF_P_",
+      "endpoint": "resp_val",
+      "path_group": "vclk_core_clock",
+      "path_type": "min",
+      "arrival_time": 0.89,
+      "required_time": 0.07,
+      "slack": 0.82
+    },
+    {
+      "startpoint": "dpath.b_reg.out[3]$_DFFE_PP_",
+      "endpoint": "dpath.a_reg.out[11]$_DFFE_PP_",
+      "path_group": "core_clock",
+      "path_type": "max",
+      "arrival_time": 2.62,
+      "required_time": 1.16,
+      "slack": -1.46
+    },
+    {
+      "startpoint": "dpath.b_reg.out[3]$_DFFE_PP_",
+      "endpoint": "resp_msg[15]",
+      "path_group": "vclk_core_clock",
+      "path_type": "max",
+      "arrival_time": 2.48,
+      "required_time": 1.17,
+      "slack": -1.31
+    },
+    {
+      "startpoint": "dpath.a_reg.out[0]$_DFFE_PP_",
+      "endpoint": "dpath.b_reg.out[0]$_DFFE_PP_",
+      "path_group": "core_clock",
+      "path_type": "min",
+      "arrival_time": 0.83,
+      "required_time": 0.2,
+      "slack": 0.63
+    }
+  ]
+}

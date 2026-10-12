@@ -1,0 +1,15 @@
+violation type: Short
+	srcs: net:_119_/_074_ net:_119_/_086_
+	bbox = (57.1100, 44.9800) - (57.3400, 45.1200) on Layer met1
+violation type: Short
+	srcs: net:_119_/_074_ net:_119_/_086_
+	bbox = (57.1100, 44.9950) - (57.4300, 45.1200) on Layer met1
+violation type: Short
+	srcs: net:_119_/_074_ net:_119_/_086_
+	bbox = (57.2000, 44.9800) - (57.3400, 45.1350) on Layer met1
+violation type: Short
+	srcs: net:_119_/_074_ net:_119_/_086_
+	bbox = (57.2000, 44.9950) - (57.4300, 45.1350) on Layer met1
+violation type: Short
+	srcs: net:VSS net:_119_/_123_
+	bbox = (58.1200, 46.0000) - (58.2600, 46.4800) on Layer met1

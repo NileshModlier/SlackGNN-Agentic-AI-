@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "graph_nodes": 527,
+  "graph_edges": 928,
+  "labeled_paths": 5,
+  "labeled_nodes": 5,
+  "paths_connected": 5,
+  "timing_violations": 2,
+  "timing_met_paths": 3,
+  "errors": []
+}

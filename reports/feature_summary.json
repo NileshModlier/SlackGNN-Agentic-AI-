@@ -1,0 +1,116 @@
+{
+  "designs": [
+    "aes",
+    "gcd",
+    "ibex",
+    "jpeg"
+  ],
+  "node_features": [
+    "gate_input",
+    "gate_output",
+    "gate_register",
+    "gate_combinational",
+    "register_flag",
+    "fanin",
+    "fanout",
+    "logic_depth",
+    "in_degree",
+    "out_degree"
+  ],
+  "timing_features_extracted": [
+    "arrival_time",
+    "required_time",
+    "slack",
+    "critical_path_membership"
+  ],
+  "timing_features_used_as_input": [
+    "logic_depth",
+    "critical_path_membership",
+    "source_distance"
+  ],
+  "timing_features_withheld_from_input": [
+    "arrival_time",
+    "required_time",
+    "slack"
+  ],
+  "edge_features": [
+    "source_input",
+    "source_output",
+    "source_register",
+    "source_combinational",
+    "target_input",
+    "target_output",
+    "target_register",
+    "target_combinational",
+    "net_delay",
+    "topological_distance"
+  ],
+  "normalization": "Count features use log1p divided by that design's maximum. Logic depth and topological distance are divided by that design's maximum depth.",
+  "net_delay": "Structural proxy: log1p of the driver fanout, normalized per design. Published edges do not store a SPEF net name, so capacitance is not joined.",
+  "gate_type": "Four-way node class from the published graph: input, output, register, combinational.",
+  "fanin_fanout": "In this signal-flow graph each edge is one driver-to-load connection, so fanin equals in-degree and fanout equals out-degree.",
+  "total_nodes": 70678,
+  "total_edges": 166222,
+  "designs_detail": [
+    {
+      "design_name": "aes",
+      "node_count": 15868,
+      "edge_count": 38215,
+      "node_feature_dimension": 10,
+      "timing_input_dimension": 3,
+      "edge_feature_dimension": 10,
+      "max_logic_depth": 19,
+      "critical_path_nodes": 20,
+      "endpoints_with_arrival": 4,
+      "unordered_cyclic_nodes": 0,
+      "label_count": 4,
+      "mean_normalized_depth": 0.47046688199043274,
+      "mean_fanout": 2.408306121826172
+    },
+    {
+      "design_name": "gcd",
+      "node_count": 527,
+      "edge_count": 928,
+      "node_feature_dimension": 10,
+      "timing_input_dimension": 3,
+      "edge_feature_dimension": 10,
+      "max_logic_depth": 14,
+      "critical_path_nodes": 27,
+      "endpoints_with_arrival": 5,
+      "unordered_cyclic_nodes": 0,
+      "label_count": 5,
+      "mean_normalized_depth": 0.3106532692909241,
+      "mean_fanout": 1.7609108686447144
+    },
+    {
+      "design_name": "ibex",
+      "node_count": 18000,
+      "edge_count": 44436,
+      "node_feature_dimension": 10,
+      "timing_input_dimension": 3,
+      "edge_feature_dimension": 10,
+      "max_logic_depth": 47,
+      "critical_path_nodes": 42,
+      "endpoints_with_arrival": 7,
+      "unordered_cyclic_nodes": 0,
+      "label_count": 7,
+      "mean_normalized_depth": 0.38194796442985535,
+      "mean_fanout": 2.4686665534973145
+    },
+    {
+      "design_name": "jpeg",
+      "node_count": 36283,
+      "edge_count": 82643,
+      "node_feature_dimension": 10,
+      "timing_input_dimension": 3,
+      "edge_feature_dimension": 10,
+      "max_logic_depth": 27,
+      "critical_path_nodes": 23,
+      "endpoints_with_arrival": 6,
+      "unordered_cyclic_nodes": 0,
+      "label_count": 6,
+      "mean_normalized_depth": 0.24353308975696564,
+      "mean_fanout": 2.277733325958252
+    }
+  ]
+}

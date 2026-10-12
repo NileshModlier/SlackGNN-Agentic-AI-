@@ -1,0 +1,442 @@
+[
+  {
+    "design_name": "aes",
+    "critical_gate_rankings": [
+      {
+        "node": "place7317",
+        "node_type": "combinational",
+        "influence": 22.78506088256836,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place7304",
+        "node_type": "combinational",
+        "influence": 22.379634857177734,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place8087",
+        "node_type": "combinational",
+        "influence": 22.267967224121094,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place7271",
+        "node_type": "combinational",
+        "influence": 22.053617477416992,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place8090",
+        "node_type": "combinational",
+        "influence": 21.91065788269043,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place7280",
+        "node_type": "combinational",
+        "influence": 20.20273208618164,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place6724",
+        "node_type": "combinational",
+        "influence": 19.727128982543945,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place8106",
+        "node_type": "combinational",
+        "influence": 19.184951782226562,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place6744",
+        "node_type": "combinational",
+        "influence": 19.021852493286133,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place7248",
+        "node_type": "combinational",
+        "influence": 18.863605499267578,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place7410",
+        "node_type": "combinational",
+        "influence": 18.363924026489258,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place6634",
+        "node_type": "combinational",
+        "influence": 17.995559692382812,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place7130",
+        "node_type": "combinational",
+        "influence": 17.35068702697754,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place7637",
+        "node_type": "combinational",
+        "influence": 17.211841583251953,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place7293",
+        "node_type": "combinational",
+        "influence": 16.96328353881836,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      }
+    ]
+  },
+  {
+    "design_name": "gcd",
+    "critical_gate_rankings": [
+      {
+        "node": "_119__1",
+        "node_type": "combinational",
+        "influence": 9.329150199890137,
+        "received_attention": 0.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place171",
+        "node_type": "combinational",
+        "influence": 7.205160140991211,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place135",
+        "node_type": "combinational",
+        "influence": 6.434844493865967,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place170",
+        "node_type": "combinational",
+        "influence": 5.686360836029053,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place212",
+        "node_type": "combinational",
+        "influence": 4.790218353271484,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place172",
+        "node_type": "combinational",
+        "influence": 4.200902462005615,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "clkbuf_0_clk",
+        "node_type": "combinational",
+        "influence": 4.0,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "_119_/_145_",
+        "node_type": "combinational",
+        "influence": 3.344695568084717,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "_119_/_140_",
+        "node_type": "combinational",
+        "influence": 3.316614866256714,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "clkbuf_2_1__f_clk",
+        "node_type": "combinational",
+        "influence": 3.220937967300415,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "clkbuf_2_3__f_clk",
+        "node_type": "combinational",
+        "influence": 3.065239906311035,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "clkbuf_2_2__f_clk",
+        "node_type": "combinational",
+        "influence": 3.0571446418762207,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "_119_/_205_",
+        "node_type": "combinational",
+        "influence": 3.0,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "_119_/_191_",
+        "node_type": "combinational",
+        "influence": 2.831315755844116,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "_119_/_177_",
+        "node_type": "combinational",
+        "influence": 2.816768169403076,
+        "received_attention": 0.9999998807907104,
+        "on_reported_path": false
+      }
+    ]
+  },
+  {
+    "design_name": "ibex",
+    "critical_gate_rankings": [
+      {
+        "node": "place7092",
+        "node_type": "combinational",
+        "influence": 39.09136962890625,
+        "received_attention": 1.0,
+        "on_reported_path": true
+      },
+      {
+        "node": "place7096",
+        "node_type": "combinational",
+        "influence": 30.44930076599121,
+        "received_attention": 1.0,
+        "on_reported_path": true
+      },
+      {
+        "node": "place6947",
+        "node_type": "combinational",
+        "influence": 30.065519332885742,
+        "received_attention": 1.0,
+        "on_reported_path": true
+      },
+      {
+        "node": "place5154",
+        "node_type": "combinational",
+        "influence": 29.264799118041992,
+        "received_attention": 1.0,
+        "on_reported_path": true
+      },
+      {
+        "node": "place7093",
+        "node_type": "combinational",
+        "influence": 23.644020080566406,
+        "received_attention": 1.0,
+        "on_reported_path": true
+      },
+      {
+        "node": "place5160",
+        "node_type": "combinational",
+        "influence": 20.915393829345703,
+        "received_attention": 1.0,
+        "on_reported_path": true
+      },
+      {
+        "node": "place7070",
+        "node_type": "combinational",
+        "influence": 18.666519165039062,
+        "received_attention": 1.0,
+        "on_reported_path": true
+      },
+      {
+        "node": "place7055",
+        "node_type": "combinational",
+        "influence": 15.780928611755371,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place7077",
+        "node_type": "combinational",
+        "influence": 14.507436752319336,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place7102",
+        "node_type": "combinational",
+        "influence": 14.472315788269043,
+        "received_attention": 1.0,
+        "on_reported_path": true
+      },
+      {
+        "node": "place4340",
+        "node_type": "combinational",
+        "influence": 13.397191047668457,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place7067",
+        "node_type": "combinational",
+        "influence": 13.29294204711914,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place7056",
+        "node_type": "combinational",
+        "influence": 13.206478118896484,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place7087",
+        "node_type": "combinational",
+        "influence": 13.016566276550293,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "clkbuf_3_6__f_clk_i_regs",
+        "node_type": "combinational",
+        "influence": 13.0,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      }
+    ]
+  },
+  {
+    "design_name": "jpeg",
+    "critical_gate_rankings": [
+      {
+        "node": "place8194",
+        "node_type": "combinational",
+        "influence": 23.127235412597656,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place8993",
+        "node_type": "combinational",
+        "influence": 22.173620223999023,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place8890",
+        "node_type": "combinational",
+        "influence": 22.08559799194336,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place8931",
+        "node_type": "combinational",
+        "influence": 22.03714370727539,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place7004",
+        "node_type": "combinational",
+        "influence": 21.807397842407227,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place9005",
+        "node_type": "combinational",
+        "influence": 21.364051818847656,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place8580",
+        "node_type": "combinational",
+        "influence": 21.14106559753418,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place8257",
+        "node_type": "combinational",
+        "influence": 21.111221313476562,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place8181",
+        "node_type": "combinational",
+        "influence": 20.651153564453125,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place8974",
+        "node_type": "combinational",
+        "influence": 20.274364471435547,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place8991",
+        "node_type": "combinational",
+        "influence": 19.766931533813477,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place8953",
+        "node_type": "combinational",
+        "influence": 19.703012466430664,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place8624",
+        "node_type": "combinational",
+        "influence": 19.638355255126953,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place8879",
+        "node_type": "combinational",
+        "influence": 19.611146926879883,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      },
+      {
+        "node": "place8961",
+        "node_type": "combinational",
+        "influence": 19.598613739013672,
+        "received_attention": 1.0,
+        "on_reported_path": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "designs": [
+    "gcd",
+    "aes",
+    "ibex",
+    "uart",
+    "spi",
+    "jpeg",
+    "riscv32i"
+  ]
+}

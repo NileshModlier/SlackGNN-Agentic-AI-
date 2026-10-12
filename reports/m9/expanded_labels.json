@@ -1,0 +1,1108 @@
+{
+  "requested_designs": [
+    "gcd",
+    "aes",
+    "ibex",
+    "jpeg",
+    "riscv32i",
+    "microwatt",
+    "chameleon"
+  ],
+  "missing_designs": [
+    {
+      "design": "riscv32i",
+      "reason": "design directory is missing"
+    },
+    {
+      "design": "microwatt",
+      "reason": "design directory is missing"
+    },
+    {
+      "design": "chameleon",
+      "reason": "design directory is missing"
+    }
+  ],
+  "summary": {
+    "missing_designs": [
+      {
+        "design": "riscv32i",
+        "reason": "design directory is missing"
+      },
+      {
+        "design": "microwatt",
+        "reason": "design directory is missing"
+      },
+      {
+        "design": "chameleon",
+        "reason": "design directory is missing"
+      }
+    ],
+    "design_count": 4,
+    "original_label_count": 22,
+    "expanded_label_count": 112,
+    "added_label_count": 90,
+    "node_count": 70678,
+    "edge_count": 166222,
+    "paths_only_in_report": 0,
+    "method": "Each reported startpoint-to-endpoint pair donates its slack to the nodes on the shortest signal-flow route. Shared nodes keep the minimum slack. Published endpoint slack from graph.pt is restored afterward. Propagated slack is not a new static-timing measurement."
+  },
+  "designs": [
+    {
+      "design_name": "gcd",
+      "present": true,
+      "node_count": 527,
+      "edge_count": 928,
+      "original_label_count": 5,
+      "expanded_label_count": 27,
+      "added_label_count": 22,
+      "original_violation_count": 2,
+      "original_met_count": 3,
+      "expanded_violation_count": 15,
+      "expanded_met_count": 12,
+      "dataset_path_count": 5,
+      "report_path_blocks": 8,
+      "report_path_count": 5,
+      "unique_path_count": 5,
+      "paths_only_in_report": 0,
+      "mapped_path_count": 5,
+      "unmapped_path_count": 0,
+      "disconnected_path_count": 0,
+      "endpoints_restored": 5,
+      "endpoints_touched_by_worse_path": 0,
+      "route_length_min": 3,
+      "route_length_median": 5,
+      "route_length_max": 11,
+      "dataset_note": null,
+      "report_note": null,
+      "errors": [],
+      "labeled_nodes": [
+        {
+          "node_index": 4,
+          "node_name": "resp_rdy",
+          "slack": 0.5299999713897705,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 5,
+          "node_name": "resp_val",
+          "slack": 0.8199999928474426,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 38,
+          "node_name": "resp_msg[15]",
+          "slack": -1.309999942779541,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 56,
+          "node_name": "_119_/_130_",
+          "slack": -1.309999942779541,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 57,
+          "node_name": "_119_/_131_",
+          "slack": -1.309999942779541,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 76,
+          "node_name": "_119_/_150_",
+          "slack": -1.4600000381469727,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 140,
+          "node_name": "_119_/_214_",
+          "slack": -1.4600000381469727,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 151,
+          "node_name": "_119_/_225_",
+          "slack": -1.4600000381469727,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 154,
+          "node_name": "_119_/_228_",
+          "slack": -1.4600000381469727,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 178,
+          "node_name": "_119_/_252_",
+          "slack": -1.4600000381469727,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 179,
+          "node_name": "_119_/_253_",
+          "slack": -1.4600000381469727,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 277,
+          "node_name": "_121_",
+          "slack": 0.8199999928474426,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 316,
+          "node_name": "_160_",
+          "slack": -1.4600000381469727,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 318,
+          "node_name": "_162_",
+          "slack": -1.4600000381469727,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 328,
+          "node_name": "_172_",
+          "slack": 0.6299999952316284,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 343,
+          "node_name": "_187_",
+          "slack": 0.8199999928474426,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 344,
+          "node_name": "_188_",
+          "slack": 0.5299999713897705,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 370,
+          "node_name": "ctrl.state.out[0]$_DFF_P_",
+          "slack": 0.5299999713897705,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 371,
+          "node_name": "ctrl.state.out[1]$_DFF_P_",
+          "slack": 0.8199999928474426,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 373,
+          "node_name": "dpath.a_reg.out[0]$_DFFE_PP_",
+          "slack": 0.6299999952316284,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 375,
+          "node_name": "dpath.a_reg.out[11]$_DFFE_PP_",
+          "slack": -1.4600000381469727,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 389,
+          "node_name": "dpath.b_reg.out[0]$_DFFE_PP_",
+          "slack": 0.6299999952316284,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 398,
+          "node_name": "dpath.b_reg.out[3]$_DFFE_PP_",
+          "slack": -1.4600000381469727,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 433,
+          "node_name": "input37",
+          "slack": 0.5299999713897705,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 447,
+          "node_name": "output45",
+          "slack": -1.309999942779541,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 457,
+          "node_name": "output55",
+          "slack": 0.8199999928474426,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 502,
+          "node_name": "rebuffer217",
+          "slack": -1.4600000381469727,
+          "original_endpoint": false
+        }
+      ],
+      "routes": [
+        {
+          "startpoint": "resp_rdy",
+          "endpoint": "ctrl.state.out[0]$_DFF_P_",
+          "path_group": "core_clock",
+          "path_type": "min",
+          "slack": 0.53,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 4
+        },
+        {
+          "startpoint": "ctrl.state.out[1]$_DFF_P_",
+          "endpoint": "resp_val",
+          "path_group": "vclk_core_clock",
+          "path_type": "min",
+          "slack": 0.82,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 5
+        },
+        {
+          "startpoint": "dpath.b_reg.out[3]$_DFFE_PP_",
+          "endpoint": "dpath.a_reg.out[11]$_DFFE_PP_",
+          "path_group": "core_clock",
+          "path_type": "max",
+          "slack": -1.46,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 11
+        },
+        {
+          "startpoint": "dpath.b_reg.out[3]$_DFFE_PP_",
+          "endpoint": "resp_msg[15]",
+          "path_group": "vclk_core_clock",
+          "path_type": "max",
+          "slack": -1.31,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 9
+        },
+        {
+          "startpoint": "dpath.a_reg.out[0]$_DFFE_PP_",
+          "endpoint": "dpath.b_reg.out[0]$_DFFE_PP_",
+          "path_group": "core_clock",
+          "path_type": "min",
+          "slack": 0.63,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 3
+        }
+      ]
+    },
+    {
+      "design_name": "aes",
+      "present": true,
+      "node_count": 15868,
+      "edge_count": 38215,
+      "original_label_count": 4,
+      "expanded_label_count": 20,
+      "added_label_count": 16,
+      "original_violation_count": 1,
+      "original_met_count": 3,
+      "expanded_violation_count": 11,
+      "expanded_met_count": 9,
+      "dataset_path_count": 4,
+      "report_path_blocks": 8,
+      "report_path_count": 4,
+      "unique_path_count": 4,
+      "paths_only_in_report": 0,
+      "mapped_path_count": 4,
+      "unmapped_path_count": 0,
+      "disconnected_path_count": 0,
+      "endpoints_restored": 4,
+      "endpoints_touched_by_worse_path": 0,
+      "route_length_min": 3,
+      "route_length_median": 3.0,
+      "route_length_max": 11,
+      "dataset_note": null,
+      "report_note": null,
+      "errors": [],
+      "labeled_nodes": [
+        {
+          "node_index": 287,
+          "node_name": "text_out[100]",
+          "slack": 1.4900000095367432,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 375,
+          "node_name": "text_out[12]",
+          "slack": 1.6299999952316284,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 8854,
+          "node_name": "_19481_",
+          "slack": -0.07999999821186066,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 8869,
+          "node_name": "_19496_",
+          "slack": -0.07999999821186066,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 10590,
+          "node_name": "_21217_",
+          "slack": 0.47999998927116394,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 10878,
+          "node_name": "_21505_",
+          "slack": -0.07999999821186066,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 10879,
+          "node_name": "_21506_",
+          "slack": -0.07999999821186066,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 10880,
+          "node_name": "_21507_",
+          "slack": -0.07999999821186066,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 10882,
+          "node_name": "_21509_",
+          "slack": -0.07999999821186066,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 11186,
+          "node_name": "dcnt[1]$_SDFFE_PN0P_",
+          "slack": 0.47999998927116394,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 11189,
+          "node_name": "done$_DFF_P_",
+          "slack": 0.47999998927116394,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 11451,
+          "node_name": "output261",
+          "slack": 1.4900000095367432,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 11481,
+          "node_name": "output291",
+          "slack": 1.6299999952316284,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 13219,
+          "node_name": "place6242",
+          "slack": -0.07999999821186066,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 13222,
+          "node_name": "place6245",
+          "slack": -0.07999999821186066,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 15208,
+          "node_name": "rebuffer8248",
+          "slack": -0.07999999821186066,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 15400,
+          "node_name": "sa23_sr[3]$_DFF_P_",
+          "slack": -0.07999999821186066,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 15410,
+          "node_name": "sa30_sr[5]$_DFF_P_",
+          "slack": -0.07999999821186066,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 15569,
+          "node_name": "text_out[100]$_DFF_P_",
+          "slack": 1.4900000095367432,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 15599,
+          "node_name": "text_out[12]$_DFF_P_",
+          "slack": 1.6299999952316284,
+          "original_endpoint": false
+        }
+      ],
+      "routes": [
+        {
+          "startpoint": "dcnt[1]$_SDFFE_PN0P_",
+          "endpoint": "done$_DFF_P_",
+          "path_group": "clk",
+          "path_type": "min",
+          "slack": 0.48,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 3
+        },
+        {
+          "startpoint": "text_out[100]$_DFF_P_",
+          "endpoint": "text_out[100]",
+          "path_group": "vclk_clk",
+          "path_type": "min",
+          "slack": 1.49,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 3
+        },
+        {
+          "startpoint": "sa23_sr[3]$_DFF_P_",
+          "endpoint": "sa30_sr[5]$_DFF_P_",
+          "path_group": "clk",
+          "path_type": "max",
+          "slack": -0.08,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 11
+        },
+        {
+          "startpoint": "text_out[12]$_DFF_P_",
+          "endpoint": "text_out[12]",
+          "path_group": "vclk_clk",
+          "path_type": "max",
+          "slack": 1.63,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 3
+        }
+      ]
+    },
+    {
+      "design_name": "ibex",
+      "present": true,
+      "node_count": 18000,
+      "edge_count": 44436,
+      "original_label_count": 7,
+      "expanded_label_count": 42,
+      "added_label_count": 35,
+      "original_violation_count": 2,
+      "original_met_count": 5,
+      "expanded_violation_count": 24,
+      "expanded_met_count": 18,
+      "dataset_path_count": 8,
+      "report_path_blocks": 14,
+      "report_path_count": 8,
+      "unique_path_count": 8,
+      "paths_only_in_report": 0,
+      "mapped_path_count": 8,
+      "unmapped_path_count": 0,
+      "disconnected_path_count": 0,
+      "endpoints_restored": 7,
+      "endpoints_touched_by_worse_path": 0,
+      "route_length_min": 2,
+      "route_length_median": 4.5,
+      "route_length_max": 17,
+      "dataset_note": null,
+      "report_note": null,
+      "errors": [],
+      "labeled_nodes": [
+        {
+          "node_index": 3,
+          "node_name": "core_sleep_o",
+          "slack": 2.569999933242798,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 19,
+          "node_name": "rst_ni",
+          "slack": 2.2100000381469727,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 185,
+          "node_name": "instr_addr_o[31]",
+          "slack": -0.550000011920929,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 4283,
+          "node_name": "_16994_",
+          "slack": -0.550000011920929,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 4285,
+          "node_name": "_16996_",
+          "slack": -0.550000011920929,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 4291,
+          "node_name": "_17002_",
+          "slack": -0.550000011920929,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 4319,
+          "node_name": "_17030_",
+          "slack": -0.550000011920929,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 4320,
+          "node_name": "_17031_",
+          "slack": -0.550000011920929,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 4352,
+          "node_name": "_17063_",
+          "slack": -0.550000011920929,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 4353,
+          "node_name": "_17064_",
+          "slack": -0.49000000953674316,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 4360,
+          "node_name": "_17071_",
+          "slack": 1.2999999523162842,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 4902,
+          "node_name": "_17613_",
+          "slack": -0.550000011920929,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 4903,
+          "node_name": "_17614_",
+          "slack": -0.550000011920929,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 4904,
+          "node_name": "_17615_",
+          "slack": -0.550000011920929,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 5643,
+          "node_name": "_18354_",
+          "slack": -0.49000000953674316,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 5937,
+          "node_name": "_18648_",
+          "slack": 2.569999933242798,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 12190,
+          "node_name": "_24901_",
+          "slack": -0.49000000953674316,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 13190,
+          "node_name": "core_busy_q$_DFF_PN0_",
+          "slack": 2.569999933242798,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 13191,
+          "node_name": "core_clock_gate_i.en_latch$_DLATCH_N_",
+          "slack": 1.2999999523162842,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 13245,
+          "node_name": "cs_registers_i.mcycle_counter_i.counter_val_o[56]$_DFFE_PN0P_",
+          "slack": 2.2100000381469727,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 14559,
+          "node_name": "gen_regfile_ff.register_file_i.rf_reg[876]$_DFFE_PN0P_",
+          "slack": 3.7699999809265137,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 14697,
+          "node_name": "id_stage_i.controller_i.ctrl_fsm_cs[0]$_DFF_PN1_",
+          "slack": 0.41999998688697815,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 14703,
+          "node_name": "id_stage_i.controller_i.ctrl_fsm_cs[5]$_DFF_PN0_",
+          "slack": 0.41999998688697815,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 14890,
+          "node_name": "if_stage_i.gen_prefetch_buffer.prefetch_buffer_i.fifo_i.rdata_q[48]$_DFFE_PP_",
+          "slack": -0.49000000953674316,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 14946,
+          "node_name": "if_stage_i.gen_prefetch_buffer.prefetch_buffer_i.fifo_i.valid_q[2]$_DFF_PN0_",
+          "slack": -0.49000000953674316,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 15013,
+          "node_name": "if_stage_i.instr_rdata_id_o[21]$_DFFE_PP_",
+          "slack": -0.550000011920929,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 15128,
+          "node_name": "input164",
+          "slack": 2.2100000381469727,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 15281,
+          "node_name": "output166",
+          "slack": 2.569999933242798,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 15372,
+          "node_name": "output257",
+          "slack": -0.550000011920929,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 16029,
+          "node_name": "place5154",
+          "slack": -0.49000000953674316,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 16034,
+          "node_name": "place5159",
+          "slack": -0.550000011920929,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 16035,
+          "node_name": "place5160",
+          "slack": -0.550000011920929,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 16382,
+          "node_name": "place5556",
+          "slack": 2.569999933242798,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 17628,
+          "node_name": "place6803",
+          "slack": -0.550000011920929,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 17633,
+          "node_name": "place6808",
+          "slack": -0.550000011920929,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 17772,
+          "node_name": "place6947",
+          "slack": -0.49000000953674316,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 17895,
+          "node_name": "place7070",
+          "slack": 2.2100000381469727,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 17917,
+          "node_name": "place7092",
+          "slack": 3.7699999809265137,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 17918,
+          "node_name": "place7093",
+          "slack": 3.7699999809265137,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 17921,
+          "node_name": "place7096",
+          "slack": 3.7699999809265137,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 17927,
+          "node_name": "place7102",
+          "slack": 3.7699999809265137,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 17936,
+          "node_name": "rebuffer7115",
+          "slack": -0.550000011920929,
+          "original_endpoint": false
+        }
+      ],
+      "routes": [
+        {
+          "startpoint": "rst_ni",
+          "endpoint": "cs_registers_i.mcycle_counter_i.counter_val_o[56]$_DFFE_PN0P_",
+          "path_group": "asynchronous",
+          "path_type": "min",
+          "slack": 2.21,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 4
+        },
+        {
+          "startpoint": "core_clock_gate_i.en_latch$_DLATCH_N_",
+          "endpoint": "_17071_",
+          "path_group": "gated clock",
+          "path_type": "min",
+          "slack": 1.3,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 2
+        },
+        {
+          "startpoint": "id_stage_i.controller_i.ctrl_fsm_cs[0]$_DFF_PN1_",
+          "endpoint": "id_stage_i.controller_i.ctrl_fsm_cs[5]$_DFF_PN0_",
+          "path_group": "core_clock",
+          "path_type": "min",
+          "slack": 0.42,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 2
+        },
+        {
+          "startpoint": "core_busy_q$_DFF_PN0_",
+          "endpoint": "core_sleep_o",
+          "path_group": "vclk_core_clock",
+          "path_type": "min",
+          "slack": 2.57,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 5
+        },
+        {
+          "startpoint": "rst_ni",
+          "endpoint": "gen_regfile_ff.register_file_i.rf_reg[876]$_DFFE_PN0P_",
+          "path_group": "asynchronous",
+          "path_type": "max",
+          "slack": 3.77,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 7
+        },
+        {
+          "startpoint": "core_clock_gate_i.en_latch$_DLATCH_N_",
+          "endpoint": "_17071_",
+          "path_group": "gated clock",
+          "path_type": "max",
+          "slack": 2.15,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 2
+        },
+        {
+          "startpoint": "if_stage_i.instr_rdata_id_o[21]$_DFFE_PP_",
+          "endpoint": "if_stage_i.gen_prefetch_buffer.prefetch_buffer_i.fifo_i.rdata_q[48]$_DFFE_PP_",
+          "path_group": "core_clock",
+          "path_type": "max",
+          "slack": -0.49,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 16
+        },
+        {
+          "startpoint": "if_stage_i.instr_rdata_id_o[21]$_DFFE_PP_",
+          "endpoint": "instr_addr_o[31]",
+          "path_group": "vclk_core_clock",
+          "path_type": "max",
+          "slack": -0.55,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 17
+        }
+      ]
+    },
+    {
+      "design_name": "jpeg",
+      "present": true,
+      "node_count": 36283,
+      "edge_count": 82643,
+      "original_label_count": 6,
+      "expanded_label_count": 23,
+      "added_label_count": 17,
+      "original_violation_count": 1,
+      "original_met_count": 5,
+      "expanded_violation_count": 10,
+      "expanded_met_count": 13,
+      "dataset_path_count": 6,
+      "report_path_blocks": 11,
+      "report_path_count": 6,
+      "unique_path_count": 6,
+      "paths_only_in_report": 0,
+      "mapped_path_count": 6,
+      "unmapped_path_count": 0,
+      "disconnected_path_count": 0,
+      "endpoints_restored": 6,
+      "endpoints_touched_by_worse_path": 1,
+      "route_length_min": 2,
+      "route_length_median": 3.0,
+      "route_length_max": 11,
+      "dataset_note": null,
+      "report_note": null,
+      "errors": [],
+      "labeled_nodes": [
+        {
+          "node_index": 1,
+          "node_name": "douten",
+          "slack": 3.130000114440918,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 4,
+          "node_name": "rst",
+          "slack": 1.1200000047683716,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 41,
+          "node_name": "rlen[1]",
+          "slack": 1.690000057220459,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 518,
+          "node_name": "_35691_",
+          "slack": -0.5099999904632568,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 519,
+          "node_name": "_35692_",
+          "slack": -0.5099999904632568,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 523,
+          "node_name": "_35696_",
+          "slack": -0.5099999904632568,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 2379,
+          "node_name": "_37667_",
+          "slack": -0.5099999904632568,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 19580,
+          "node_name": "_55670_",
+          "slack": -0.5099999904632568,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 19588,
+          "node_name": "_55678_",
+          "slack": -0.5099999904632568,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 27485,
+          "node_name": "dqnr_doe$_DFFE_PP_",
+          "slack": 0.38999998569488525,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 28804,
+          "node_name": "fdct_zigzag.dct_mod.dct_block_3.dct_unit_4.macu.mult_res[18]$_DFFE_PP_",
+          "slack": -0.5099999904632568,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 30403,
+          "node_name": "fdct_zigzag.dct_mod.ddin[4]$_DFFE_PN0P_",
+          "slack": 3.0899999141693115,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 31204,
+          "node_name": "input32",
+          "slack": 1.1200000047683716,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 31216,
+          "node_name": "output44",
+          "slack": 3.130000114440918,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 31224,
+          "node_name": "output52",
+          "slack": 1.690000057220459,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 33753,
+          "node_name": "place7497",
+          "slack": -0.5099999904632568,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 34650,
+          "node_name": "place8395",
+          "slack": -0.5099999904632568,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 34652,
+          "node_name": "place8397",
+          "slack": -0.5099999904632568,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 35119,
+          "node_name": "place8872",
+          "slack": 3.0899999141693115,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 35731,
+          "node_name": "qnr.qnt_cnt[0]$_DFFE_PN0P_",
+          "slack": 1.1200000047683716,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 36070,
+          "node_name": "rle.ddstrb$_DFF_PN0_",
+          "slack": 0.38999998569488525,
+          "original_endpoint": true
+        },
+        {
+          "node_index": 36255,
+          "node_name": "rle.rz4.deno$_DFFE_PN0P_",
+          "slack": 3.130000114440918,
+          "original_endpoint": false
+        },
+        {
+          "node_index": 36261,
+          "node_name": "rle.rz4.rleno[1]$_DFFE_PP_",
+          "slack": 1.690000057220459,
+          "original_endpoint": false
+        }
+      ],
+      "routes": [
+        {
+          "startpoint": "rst",
+          "endpoint": "qnr.qnt_cnt[0]$_DFFE_PN0P_",
+          "path_group": "asynchronous",
+          "path_type": "min",
+          "slack": 1.12,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 3
+        },
+        {
+          "startpoint": "dqnr_doe$_DFFE_PP_",
+          "endpoint": "rle.ddstrb$_DFF_PN0_",
+          "path_group": "clk",
+          "path_type": "min",
+          "slack": 0.39,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 2
+        },
+        {
+          "startpoint": "rle.rz4.rleno[1]$_DFFE_PP_",
+          "endpoint": "rlen[1]",
+          "path_group": "vclk_clk",
+          "path_type": "min",
+          "slack": 1.69,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 3
+        },
+        {
+          "startpoint": "rst",
+          "endpoint": "fdct_zigzag.dct_mod.ddin[4]$_DFFE_PN0P_",
+          "path_group": "asynchronous",
+          "path_type": "max",
+          "slack": 3.09,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 4
+        },
+        {
+          "startpoint": "fdct_zigzag.dct_mod.ddin[4]$_DFFE_PN0P_",
+          "endpoint": "fdct_zigzag.dct_mod.dct_block_3.dct_unit_4.macu.mult_res[18]$_DFFE_PP_",
+          "path_group": "clk",
+          "path_type": "max",
+          "slack": -0.51,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 11
+        },
+        {
+          "startpoint": "rle.rz4.deno$_DFFE_PN0P_",
+          "endpoint": "douten",
+          "path_group": "vclk_clk",
+          "path_type": "max",
+          "slack": 3.13,
+          "source": "report+dataset",
+          "mapped": true,
+          "disconnected": false,
+          "route_length": 3
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Tests, coverage, and tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.tox/
+.nox/
+.cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local design data and experiment outputs. Directory markers stay tracked.
+# data/gcd/ is the curated OpenROAD GCD dataset from Milestone M1.
+data/*
+!data/.gitkeep
+!data/designs.json
+!data/gcd/
+!data/gcd/**
+!data/corpus/
+!data/corpus/**
+results/*
+!results/.gitkeep
+
+# Learned weights and experiment trackers.
+# data/gcd/pyg/graph.pt is the PyG graph object, not a checkpoint.
+*.pt
+*.pth
+!data/gcd/pyg/graph.pt
+!data/corpus/**/graph.pt
+*.ckpt
+*.onnx
+*.safetensors
+wandb/
+lightning_logs/
+mlruns/
+
+# Bulky EDA dumps
+*.fsdb
+*.vcd
+*.vpd
+*.saif
+*.spef
+*.sdf
+!data/gcd/spef/*.spef

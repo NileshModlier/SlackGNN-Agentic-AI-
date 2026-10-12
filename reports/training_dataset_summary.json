@@ -1,0 +1,61 @@
+{
+  "designs": [
+    "aes",
+    "gcd",
+    "ibex",
+    "jpeg"
+  ],
+  "graph_count": 4,
+  "total_nodes": 70678,
+  "total_edges": 166222,
+  "feature_dimension": 4,
+  "label_count": 22,
+  "violation_count": 6,
+  "met_count": 16,
+  "designs_detail": [
+    {
+      "design_name": "aes",
+      "node_count": 15868,
+      "edge_count": 38215,
+      "feature_dimension": 4,
+      "label_count": 4,
+      "violation_count": 1,
+      "met_count": 3,
+      "register_count": 562,
+      "combinational_count": 14918
+    },
+    {
+      "design_name": "gcd",
+      "node_count": 527,
+      "edge_count": 928,
+      "feature_dimension": 4,
+      "label_count": 5,
+      "violation_count": 2,
+      "met_count": 3,
+      "register_count": 35,
+      "combinational_count": 438
+    },
+    {
+      "design_name": "ibex",
+      "node_count": 18000,
+      "edge_count": 44436,
+      "feature_dimension": 4,
+      "label_count": 7,
+      "violation_count": 2,
+      "met_count": 5,
+      "register_count": 1939,
+      "combinational_count": 15797
+    },
+    {
+      "design_name": "jpeg",
+      "node_count": 36283,
+      "edge_count": 82643,
+      "feature_dimension": 4,
+      "label_count": 6,
+      "violation_count": 1,
+      "met_count": 5,
+      "register_count": 4384,
+      "combinational_count": 31852
+    }
+  ]
+}

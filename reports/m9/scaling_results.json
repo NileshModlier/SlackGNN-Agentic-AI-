@@ -1,0 +1,125 @@
+{
+  "stage": "M9.7",
+  "protocol": "nested training designs, one fixed held-out design",
+  "order": "Training designs are added from the smallest graph to the largest.",
+  "held_out": "jpeg",
+  "held_out_reason": "jpeg is present and has both endpoint classes",
+  "hyper_parameters": {
+    "hidden_channels": 32,
+    "epochs": 20,
+    "patience": 6,
+    "learning_rate": 0.01,
+    "weight_decay": 0.0001,
+    "alpha": 1.0,
+    "beta": 0.5,
+    "seed": 0,
+    "task": "multitask",
+    "runtime_note": "Message passing runs on each full netlist. The loss uses only supervised nodes. Hidden width is 32, the epoch cap is 20, and early stopping patience is 6. These limits keep the CPU study finite on the largest graph."
+  },
+  "designs": [
+    "gcd",
+    "aes",
+    "ibex",
+    "jpeg"
+  ],
+  "missing_designs": [
+    {
+      "design": "riscv32i",
+      "reason": "design directory is missing"
+    },
+    {
+      "design": "microwatt",
+      "reason": "design directory is missing"
+    },
+    {
+      "design": "chameleon",
+      "reason": "design directory is missing"
+    }
+  ],
+  "points": [
+    {
+      "training_design_count": 2,
+      "training_designs": [
+        "gcd",
+        "aes"
+      ],
+      "train_support": 45,
+      "validation_support": 2,
+      "epochs_ran": 16,
+      "endpoint": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "roc_auc": 1.0,
+        "mae": 0.9048640951514244,
+        "mse": 1.4488829975364599,
+        "rmse": 1.2036955584932845,
+        "support": 6,
+        "true_positive": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "true_negative": 5
+      },
+      "expanded": {
+        "accuracy": 0.8260869565217391,
+        "precision": 1.0,
+        "recall": 0.6,
+        "f1": 0.7499999999999999,
+        "roc_auc": 0.8692307692307693,
+        "mae": 0.9654298379369404,
+        "mse": 1.4990363851660435,
+        "rmse": 1.2243514140825924,
+        "support": 23,
+        "true_positive": 6,
+        "false_positive": 0,
+        "false_negative": 4,
+        "true_negative": 13
+      },
+      "runtime_seconds": 6.097316899918951
+    },
+    {
+      "training_design_count": 3,
+      "training_designs": [
+        "gcd",
+        "aes",
+        "ibex"
+      ],
+      "train_support": 87,
+      "validation_support": 2,
+      "epochs_ran": 7,
+      "endpoint": {
+        "accuracy": 0.5,
+        "precision": 0.25,
+        "recall": 1.0,
+        "f1": 0.4,
+        "roc_auc": 1.0,
+        "mae": 1.6308496557176113,
+        "mse": 3.8747749112884278,
+        "rmse": 1.9684447950827648,
+        "support": 6,
+        "true_positive": 1,
+        "false_positive": 3,
+        "false_negative": 0,
+        "true_negative": 2
+      },
+      "expanded": {
+        "accuracy": 0.391304347826087,
+        "precision": 0.25,
+        "recall": 0.2,
+        "f1": 0.22222222222222224,
+        "roc_auc": 0.5538461538461539,
+        "mae": 1.2903007864952087,
+        "mse": 2.7235785568621935,
+        "rmse": 1.650326803049079,
+        "support": 23,
+        "true_positive": 2,
+        "false_positive": 6,
+        "false_negative": 8,
+        "true_negative": 7
+      },
+      "runtime_seconds": 13.475686100078747
+    }
+  ],
+  "runtime_seconds": 19.59685480000917
+}

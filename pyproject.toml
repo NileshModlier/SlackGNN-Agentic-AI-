@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "slackgnn"
+version = "0.1.0"
+description = "Timing-slack research scaffold for circuit graphs."
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "torch>=2.9,<2.13",
+    "torch-geometric>=2.8,<2.9",
+    "networkx>=3.4,<4",
+    "matplotlib>=3.8,<4",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=9.0,<10",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+slackgnn = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = ["-ra"]

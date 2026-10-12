@@ -1,0 +1,10 @@
+{
+  "node_count": 527,
+  "edge_count": 928,
+  "feature_dimension": 4,
+  "label_count": 5,
+  "register_count": 35,
+  "combinational_count": 438,
+  "positive_slack_count": 3,
+  "negative_slack_count": 2
+}

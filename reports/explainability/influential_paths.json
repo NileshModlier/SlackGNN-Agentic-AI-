@@ -1,0 +1,399 @@
+[
+  {
+    "design_name": "aes",
+    "influential_paths": [
+      {
+        "startpoint": "text_out[100]$_DFF_P_",
+        "endpoint": "text_out[100]",
+        "path_group": "vclk_clk",
+        "path_type": "min",
+        "slack": 1.49,
+        "hop_count": 2,
+        "mean_attention": 1.0,
+        "gates": [
+          "text_out[100]$_DFF_P_",
+          "output261",
+          "text_out[100]"
+        ]
+      },
+      {
+        "startpoint": "text_out[12]$_DFF_P_",
+        "endpoint": "text_out[12]",
+        "path_group": "vclk_clk",
+        "path_type": "max",
+        "slack": 1.63,
+        "hop_count": 2,
+        "mean_attention": 1.0,
+        "gates": [
+          "text_out[12]$_DFF_P_",
+          "output291",
+          "text_out[12]"
+        ]
+      },
+      {
+        "startpoint": "sa23_sr[3]$_DFF_P_",
+        "endpoint": "sa30_sr[5]$_DFF_P_",
+        "path_group": "clk",
+        "path_type": "max",
+        "slack": -0.08,
+        "hop_count": 10,
+        "mean_attention": 0.7612002342939377,
+        "gates": [
+          "sa23_sr[3]$_DFF_P_",
+          "_21505_",
+          "_21506_",
+          "_21507_",
+          "_21509_",
+          "rebuffer8248",
+          "place6245",
+          "place6242",
+          "_19481_",
+          "_19496_",
+          "sa30_sr[5]$_DFF_P_"
+        ]
+      },
+      {
+        "startpoint": "dcnt[1]$_SDFFE_PN0P_",
+        "endpoint": "done$_DFF_P_",
+        "path_group": "clk",
+        "path_type": "min",
+        "slack": 0.48,
+        "hop_count": 2,
+        "mean_attention": 0.4853817969560623,
+        "gates": [
+          "dcnt[1]$_SDFFE_PN0P_",
+          "_21217_",
+          "done$_DFF_P_"
+        ]
+      }
+    ]
+  },
+  {
+    "design_name": "gcd",
+    "influential_paths": [
+      {
+        "startpoint": "ctrl.state.out[1]$_DFF_P_",
+        "endpoint": "resp_val",
+        "path_group": "vclk_core_clock",
+        "path_type": "min",
+        "slack": 0.82,
+        "hop_count": 4,
+        "mean_attention": 0.9122150838375092,
+        "gates": [
+          "ctrl.state.out[1]$_DFF_P_",
+          "_121_",
+          "_187_",
+          "output55",
+          "resp_val"
+        ]
+      },
+      {
+        "startpoint": "resp_rdy",
+        "endpoint": "ctrl.state.out[0]$_DFF_P_",
+        "path_group": "core_clock",
+        "path_type": "min",
+        "slack": 0.53,
+        "hop_count": 3,
+        "mean_attention": 0.6693567434946696,
+        "gates": [
+          "resp_rdy",
+          "input37",
+          "_188_",
+          "ctrl.state.out[0]$_DFF_P_"
+        ]
+      },
+      {
+        "startpoint": "dpath.b_reg.out[3]$_DFFE_PP_",
+        "endpoint": "resp_msg[15]",
+        "path_group": "vclk_core_clock",
+        "path_type": "max",
+        "slack": -1.31,
+        "hop_count": 8,
+        "mean_attention": 0.6419932469725609,
+        "gates": [
+          "dpath.b_reg.out[3]$_DFFE_PP_",
+          "_119_/_150_",
+          "_119_/_214_",
+          "_119_/_225_",
+          "_119_/_228_",
+          "_119_/_130_",
+          "_119_/_131_",
+          "output45",
+          "resp_msg[15]"
+        ]
+      },
+      {
+        "startpoint": "dpath.b_reg.out[3]$_DFFE_PP_",
+        "endpoint": "dpath.a_reg.out[11]$_DFFE_PP_",
+        "path_group": "core_clock",
+        "path_type": "max",
+        "slack": -1.46,
+        "hop_count": 10,
+        "mean_attention": 0.6242963939905166,
+        "gates": [
+          "dpath.b_reg.out[3]$_DFFE_PP_",
+          "_119_/_150_",
+          "_119_/_214_",
+          "_119_/_225_",
+          "_119_/_228_",
+          "_119_/_252_",
+          "_119_/_253_",
+          "rebuffer217",
+          "_160_",
+          "_162_",
+          "dpath.a_reg.out[11]$_DFFE_PP_"
+        ]
+      },
+      {
+        "startpoint": "dpath.a_reg.out[0]$_DFFE_PP_",
+        "endpoint": "dpath.b_reg.out[0]$_DFFE_PP_",
+        "path_group": "core_clock",
+        "path_type": "min",
+        "slack": 0.63,
+        "hop_count": 2,
+        "mean_attention": 0.44410406053066254,
+        "gates": [
+          "dpath.a_reg.out[0]$_DFFE_PP_",
+          "_172_",
+          "dpath.b_reg.out[0]$_DFFE_PP_"
+        ]
+      }
+    ]
+  },
+  {
+    "design_name": "ibex",
+    "influential_paths": [
+      {
+        "startpoint": "rst_ni",
+        "endpoint": "gen_regfile_ff.register_file_i.rf_reg[876]$_DFFE_PN0P_",
+        "path_group": "asynchronous",
+        "path_type": "max",
+        "slack": 3.77,
+        "hop_count": 6,
+        "mean_attention": 0.9664462606112162,
+        "gates": [
+          "rst_ni",
+          "input164",
+          "place7102",
+          "place7096",
+          "place7093",
+          "place7092",
+          "gen_regfile_ff.register_file_i.rf_reg[876]$_DFFE_PN0P_"
+        ]
+      },
+      {
+        "startpoint": "rst_ni",
+        "endpoint": "cs_registers_i.mcycle_counter_i.counter_val_o[56]$_DFFE_PN0P_",
+        "path_group": "asynchronous",
+        "path_type": "min",
+        "slack": 2.21,
+        "hop_count": 3,
+        "mean_attention": 0.9614622791608175,
+        "gates": [
+          "rst_ni",
+          "input164",
+          "place7070",
+          "cs_registers_i.mcycle_counter_i.counter_val_o[56]$_DFFE_PN0P_"
+        ]
+      },
+      {
+        "startpoint": "id_stage_i.controller_i.ctrl_fsm_cs[0]$_DFF_PN1_",
+        "endpoint": "id_stage_i.controller_i.ctrl_fsm_cs[5]$_DFF_PN0_",
+        "path_group": "core_clock",
+        "path_type": "min",
+        "slack": 0.42,
+        "hop_count": 1,
+        "mean_attention": 0.9546025395393372,
+        "gates": [
+          "id_stage_i.controller_i.ctrl_fsm_cs[0]$_DFF_PN1_",
+          "id_stage_i.controller_i.ctrl_fsm_cs[5]$_DFF_PN0_"
+        ]
+      },
+      {
+        "startpoint": "core_busy_q$_DFF_PN0_",
+        "endpoint": "core_sleep_o",
+        "path_group": "vclk_core_clock",
+        "path_type": "min",
+        "slack": 2.57,
+        "hop_count": 4,
+        "mean_attention": 0.9531418532133102,
+        "gates": [
+          "core_busy_q$_DFF_PN0_",
+          "_18648_",
+          "place5556",
+          "output166",
+          "core_sleep_o"
+        ]
+      },
+      {
+        "startpoint": "if_stage_i.instr_rdata_id_o[21]$_DFFE_PP_",
+        "endpoint": "instr_addr_o[31]",
+        "path_group": "vclk_core_clock",
+        "path_type": "max",
+        "slack": -0.55,
+        "hop_count": 16,
+        "mean_attention": 0.9309046417474747,
+        "gates": [
+          "if_stage_i.instr_rdata_id_o[21]$_DFFE_PP_",
+          "rebuffer7115",
+          "place6808",
+          "place6803",
+          "_16994_",
+          "_16996_",
+          "_17002_",
+          "_17030_",
+          "_17031_",
+          "_17063_",
+          "place5160",
+          "place5159"
+        ]
+      },
+      {
+        "startpoint": "core_clock_gate_i.en_latch$_DLATCH_N_",
+        "endpoint": "_17071_",
+        "path_group": "gated clock",
+        "path_type": "min",
+        "slack": 1.3,
+        "hop_count": 1,
+        "mean_attention": 0.9265831112861633,
+        "gates": [
+          "core_clock_gate_i.en_latch$_DLATCH_N_",
+          "_17071_"
+        ]
+      },
+      {
+        "startpoint": "core_clock_gate_i.en_latch$_DLATCH_N_",
+        "endpoint": "_17071_",
+        "path_group": "gated clock",
+        "path_type": "max",
+        "slack": 2.15,
+        "hop_count": 1,
+        "mean_attention": 0.9265831112861633,
+        "gates": [
+          "core_clock_gate_i.en_latch$_DLATCH_N_",
+          "_17071_"
+        ]
+      },
+      {
+        "startpoint": "if_stage_i.instr_rdata_id_o[21]$_DFFE_PP_",
+        "endpoint": "if_stage_i.gen_prefetch_buffer.prefetch_buffer_i.fifo_i.rdata_q[48]$_DFFE_PP_",
+        "path_group": "core_clock",
+        "path_type": "max",
+        "slack": -0.49,
+        "hop_count": 15,
+        "mean_attention": 0.9105723222096761,
+        "gates": [
+          "if_stage_i.instr_rdata_id_o[21]$_DFFE_PP_",
+          "rebuffer7115",
+          "place6808",
+          "place6803",
+          "_16994_",
+          "_16996_",
+          "_17002_",
+          "_17030_",
+          "_17031_",
+          "_17064_",
+          "place5154",
+          "_24901_"
+        ]
+      }
+    ]
+  },
+  {
+    "design_name": "jpeg",
+    "influential_paths": [
+      {
+        "startpoint": "rle.rz4.rleno[1]$_DFFE_PP_",
+        "endpoint": "rlen[1]",
+        "path_group": "vclk_clk",
+        "path_type": "min",
+        "slack": 1.69,
+        "hop_count": 2,
+        "mean_attention": 1.0,
+        "gates": [
+          "rle.rz4.rleno[1]$_DFFE_PP_",
+          "output52",
+          "rlen[1]"
+        ]
+      },
+      {
+        "startpoint": "rle.rz4.deno$_DFFE_PN0P_",
+        "endpoint": "douten",
+        "path_group": "vclk_clk",
+        "path_type": "max",
+        "slack": 3.13,
+        "hop_count": 2,
+        "mean_attention": 1.0,
+        "gates": [
+          "rle.rz4.deno$_DFFE_PN0P_",
+          "output44",
+          "douten"
+        ]
+      },
+      {
+        "startpoint": "rst",
+        "endpoint": "fdct_zigzag.dct_mod.ddin[4]$_DFFE_PN0P_",
+        "path_group": "asynchronous",
+        "path_type": "max",
+        "slack": 3.09,
+        "hop_count": 3,
+        "mean_attention": 0.8429368535677592,
+        "gates": [
+          "rst",
+          "input32",
+          "place8872",
+          "fdct_zigzag.dct_mod.ddin[4]$_DFFE_PN0P_"
+        ]
+      },
+      {
+        "startpoint": "rst",
+        "endpoint": "qnr.qnt_cnt[0]$_DFFE_PN0P_",
+        "path_group": "asynchronous",
+        "path_type": "min",
+        "slack": 1.12,
+        "hop_count": 2,
+        "mean_attention": 0.7387735545635223,
+        "gates": [
+          "rst",
+          "input32",
+          "qnr.qnt_cnt[0]$_DFFE_PN0P_"
+        ]
+      },
+      {
+        "startpoint": "fdct_zigzag.dct_mod.ddin[4]$_DFFE_PN0P_",
+        "endpoint": "fdct_zigzag.dct_mod.dct_block_3.dct_unit_4.macu.mult_res[18]$_DFFE_PP_",
+        "path_group": "clk",
+        "path_type": "max",
+        "slack": -0.51,
+        "hop_count": 10,
+        "mean_attention": 0.7261083781719208,
+        "gates": [
+          "fdct_zigzag.dct_mod.ddin[4]$_DFFE_PN0P_",
+          "place8397",
+          "place8395",
+          "_37667_",
+          "place7497",
+          "_55670_",
+          "_55678_",
+          "_35691_",
+          "_35692_",
+          "_35696_",
+          "fdct_zigzag.dct_mod.dct_block_3.dct_unit_4.macu.mult_res[18]$_DFFE_PP_"
+        ]
+      },
+      {
+        "startpoint": "dqnr_doe$_DFFE_PP_",
+        "endpoint": "rle.ddstrb$_DFF_PN0_",
+        "path_group": "clk",
+        "path_type": "min",
+        "slack": 0.39,
+        "hop_count": 1,
+        "mean_attention": 0.6278857588768005,
+        "gates": [
+          "dqnr_doe$_DFFE_PP_",
+          "rle.ddstrb$_DFF_PN0_"
+        ]
+      }
+    ]
+  }
+]
