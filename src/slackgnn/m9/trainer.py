@@ -48,6 +48,7 @@ def train_lodo(
     weight_decay: float = DEFAULT_WEIGHT_DECAY,
     alpha: float = DEFAULT_ALPHA,
     beta: float = DEFAULT_BETA,
+    zero_timing_columns: tuple[int, ...] = (),
 ) -> dict[str, object]:
     """Train on expanded labels and score both endpoint and expanded targets."""
     folds = expanded_leave_one_design_out(graphs, seed)
@@ -71,6 +72,7 @@ def train_lodo(
             alpha=alpha,
             beta=beta,
             seed=seed,
+            zero_timing_columns=zero_timing_columns,
         )
         endpoint, endpoint_predictions = _evaluate(graphs, model, fold["test_endpoint"], "endpoint")
         expanded, expanded_predictions = _evaluate(graphs, model, fold["test_expanded"], "expanded")
@@ -206,6 +208,7 @@ def _train_one(
     alpha: float,
     beta: float,
     seed: int,
+    zero_timing_columns: tuple[int, ...] = (),
 ) -> tuple[AblatedSlackGNN, int]:
     torch.manual_seed(seed)
     random.seed(seed)
@@ -217,6 +220,7 @@ def _train_one(
         drop_timing=drop_timing,
         drop_edges=drop_edges,
         uniform_attention=uniform_attention,
+        zero_timing_columns=zero_timing_columns,
     )
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
     pos_weight = _positive_weight(graphs, train_pairs)

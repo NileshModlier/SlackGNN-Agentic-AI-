@@ -1,0 +1,181 @@
+{
+  "models": [
+    {
+      "model": "gcn",
+      "single_design_seconds": [
+        {
+          "design": "gcd",
+          "nodes": 527,
+          "edges": 928,
+          "seconds": 0.001784199965186417
+        },
+        {
+          "design": "aes",
+          "nodes": 15868,
+          "edges": 38215,
+          "seconds": 0.008580500027164817
+        },
+        {
+          "design": "ibex",
+          "nodes": 18000,
+          "edges": 44436,
+          "seconds": 0.011170200072228909
+        },
+        {
+          "design": "jpeg",
+          "nodes": 36283,
+          "edges": 82643,
+          "seconds": 0.0145388999953866
+        },
+        {
+          "design": "riscv32i",
+          "nodes": 5997,
+          "edges": 15884,
+          "seconds": 0.004281200002878904
+        },
+        {
+          "design": "chameleon",
+          "nodes": 3181,
+          "edges": 6922,
+          "seconds": 0.002489600097760558
+        }
+      ],
+      "batch_inference_seconds": 0.042844600160606205,
+      "nodes_per_second": 1863852.147076966,
+      "labeled_predictions_per_second": 4037.8483951652365
+    },
+    {
+      "model": "graphsage",
+      "single_design_seconds": [
+        {
+          "design": "gcd",
+          "nodes": 527,
+          "edges": 928,
+          "seconds": 0.000853799981996417
+        },
+        {
+          "design": "aes",
+          "nodes": 15868,
+          "edges": 38215,
+          "seconds": 0.005564999999478459
+        },
+        {
+          "design": "ibex",
+          "nodes": 18000,
+          "edges": 44436,
+          "seconds": 0.00531739997677505
+        },
+        {
+          "design": "jpeg",
+          "nodes": 36283,
+          "edges": 82643,
+          "seconds": 0.009450000012293458
+        },
+        {
+          "design": "riscv32i",
+          "nodes": 5997,
+          "edges": 15884,
+          "seconds": 0.002450799918733537
+        },
+        {
+          "design": "chameleon",
+          "nodes": 3181,
+          "edges": 6922,
+          "seconds": 0.0017001000232994556
+        }
+      ],
+      "batch_inference_seconds": 0.025337099912576377,
+      "nodes_per_second": 3151741.922932644,
+      "labeled_predictions_per_second": 6827.932186277142
+    },
+    {
+      "model": "gin",
+      "single_design_seconds": [
+        {
+          "design": "gcd",
+          "nodes": 527,
+          "edges": 928,
+          "seconds": 0.0013502000365406275
+        },
+        {
+          "design": "aes",
+          "nodes": 15868,
+          "edges": 38215,
+          "seconds": 0.006146700005047023
+        },
+        {
+          "design": "ibex",
+          "nodes": 18000,
+          "edges": 44436,
+          "seconds": 0.006535399938002229
+        },
+        {
+          "design": "jpeg",
+          "nodes": 36283,
+          "edges": 82643,
+          "seconds": 0.011892099981196225
+        },
+        {
+          "design": "riscv32i",
+          "nodes": 5997,
+          "edges": 15884,
+          "seconds": 0.0027446000603958964
+        },
+        {
+          "design": "chameleon",
+          "nodes": 3181,
+          "edges": 6922,
+          "seconds": 0.0018916999688372016
+        }
+      ],
+      "batch_inference_seconds": 0.030560699990019202,
+      "nodes_per_second": 2613029.152672554,
+      "labeled_predictions_per_second": 5660.865099834099
+    },
+    {
+      "model": "slackgnn",
+      "single_design_seconds": [
+        {
+          "design": "gcd",
+          "nodes": 527,
+          "edges": 928,
+          "seconds": 0.003504499909467995
+        },
+        {
+          "design": "aes",
+          "nodes": 15868,
+          "edges": 38215,
+          "seconds": 0.029317299951799214
+        },
+        {
+          "design": "ibex",
+          "nodes": 18000,
+          "edges": 44436,
+          "seconds": 0.035076300031505525
+        },
+        {
+          "design": "jpeg",
+          "nodes": 36283,
+          "edges": 82643,
+          "seconds": 0.07457870000507683
+        },
+        {
+          "design": "riscv32i",
+          "nodes": 5997,
+          "edges": 15884,
+          "seconds": 0.014680000022053719
+        },
+        {
+          "design": "chameleon",
+          "nodes": 3181,
+          "edges": 6922,
+          "seconds": 0.007534799980930984
+        }
+      ],
+      "batch_inference_seconds": 0.16469159990083426,
+      "nodes_per_second": 484882.0464922539,
+      "labeled_predictions_per_second": 1050.448232357743
+    }
+  ],
+  "batch_definition": "One forward pass on each design, run sequentially."
+}

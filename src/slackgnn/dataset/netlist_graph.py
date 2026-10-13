@@ -12,7 +12,7 @@ import argparse
 import logging
 import pickle
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 
 import networkx as nx
@@ -29,7 +29,9 @@ from slackgnn.paths import data_dir
 logger = logging.getLogger(__name__)
 
 NODE_TYPES = ("input", "output", "register", "combinational")
-_OUTPUT_PINS = frozenset({"X", "Y", "Q", "QN", "Q_N", "HI", "LO", "Z", "ZN", "SUM", "COUT"})
+_OUTPUT_PINS = frozenset(
+    {"X", "Y", "Q", "QN", "Q_N", "HI", "LO", "Z", "ZN", "SUM", "COUT", "Do", "DO"}
+)
 _POWER_PINS = frozenset(
     {"VGND", "VPWR", "VNB", "VPB", "VDD", "VSS", "VCCD1", "VSSD1", "VPWR_PAD", "VGND_PAD"}
 )
@@ -50,12 +52,16 @@ _SEQUENTIAL_PREFIXES = (
 )
 
 
+_AHB_MASTER_OUTPUTS = frozenset({"HADDR", "HTRANS", "HSIZE", "HWRITE", "HWDATA"})
+
+
 @dataclass(frozen=True)
 class _PinUse:
     node: str
     pin: str
     direction: str
     net: str
+    cell: str
 
 
 def cell_node_type(cell: str) -> str:
@@ -199,6 +205,8 @@ def _build_graph(modules: dict[str, Module], top: str) -> nx.DiGraph:
     module = modules[top]
     port_map = {bit: bit for port in module.ports.values() for bit in port.bits}
     nodes, pins = _flatten(module, modules, prefix="", port_map=port_map)
+    input_nets = {bit for port in module.ports.values() if port.direction == "input" for bit in port.bits}
+    pins = _resolve_macro_pin_directions(pins, input_nets)
     graph = nx.DiGraph()
     for name, node_type in nodes:
         graph.add_node(name, node_name=name, node_type=node_type)
@@ -289,20 +297,78 @@ def _leaf_pins(
             continue
         direction = "output" if connection.pin in _OUTPUT_PINS else "input"
         bits = _connected_bits(connection, module, instance)
-        if len(bits) != 1:
+        if not bits:
             raise VerilogError(
-                f"Instance {instance.name} pin {connection.pin} connects {len(bits)} bits "
+                f"Instance {instance.name} pin {connection.pin} connects no bits "
                 f"(line {connection.line})"
             )
-        uses.append(
-            _PinUse(
-                node=node_name,
-                pin=connection.pin,
-                direction=direction,
-                net=_resolve_net(bits[0], port_map, prefix),
+        for index, bit in enumerate(bits):
+            pin = connection.pin if len(bits) == 1 else f"{connection.pin}[{index}]"
+            uses.append(
+                _PinUse(
+                    node=node_name,
+                    pin=pin,
+                    direction=direction,
+                    net=_resolve_net(bit, port_map, prefix),
+                    cell=instance.cell,
+                )
             )
-        )
     return uses
+
+
+def _is_macro(cell: str) -> bool:
+    """True for a leaf whose pin directions are not fixed by the standard-cell library."""
+    return not cell.startswith("sky130_")
+
+
+def _pin_base(pin: str) -> str:
+    return pin.split("[", 1)[0]
+
+
+def _resolve_macro_pin_directions(pins: list[_PinUse], input_nets: set[str]) -> list[_PinUse]:
+    """Give otherwise undriven macro nets a single driver.
+
+    Standard-cell outputs and primary inputs stay as they are. A macro pin
+    becomes the driver when it is the only macro pin on an undriven net.
+    Shared AHB master pins are driven by ``ibex_wrapper``. Shared IRQ pins
+    are driven by the peripheral rather than the core.
+    """
+    driven = set(input_nets)
+    driven.update(use.net for use in pins if use.direction == "output")
+    by_net: dict[str, list[_PinUse]] = {}
+    for use in pins:
+        if _is_macro(use.cell) and use.direction != "output":
+            by_net.setdefault(use.net, []).append(use)
+    chosen: set[tuple[str, str]] = set()
+    for net, group in by_net.items():
+        if net in driven:
+            continue
+        driver = _choose_macro_driver(group)
+        if driver is not None:
+            chosen.add((driver.node, driver.pin))
+            driven.add(net)
+    if not chosen:
+        return pins
+    return [
+        replace(use, direction="output") if (use.node, use.pin) in chosen else use
+        for use in pins
+    ]
+
+
+def _choose_macro_driver(group: list[_PinUse]) -> _PinUse | None:
+    if len(group) == 1:
+        return group[0]
+    masters = [
+        use
+        for use in group
+        if use.cell == "ibex_wrapper" and _pin_base(use.pin) in _AHB_MASTER_OUTPUTS
+    ]
+    if len(masters) == 1:
+        return masters[0]
+    irq_sources = [use for use in group if _pin_base(use.pin) == "IRQ" and use.cell != "ibex_wrapper"]
+    if len(irq_sources) == 1:
+        return irq_sources[0]
+    return None
 
 
 def _connected_bits(connection: Connection, module: Module, instance: Instance) -> tuple[str, ...]:

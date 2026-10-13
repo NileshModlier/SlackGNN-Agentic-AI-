@@ -1,0 +1,61 @@
+{
+  "assumption": "Each added design matches the current mean node, edge, label, and disk size. Training still steps one graph at a time.",
+  "current": {
+    "designs": 6,
+    "nodes": 79856.0,
+    "edges": 189028.0,
+    "labels": 173.0,
+    "graph_directory_bytes": 136840710.0,
+    "training_seconds": {
+      "gcn": 29.393659974448386,
+      "graphsage": 26.2132799718529,
+      "gin": 43.84207997936755,
+      "slackgnn": 67.60843000374734
+    },
+    "resident_tensor_bytes": 18890592.0
+  },
+  "projections": [
+    {
+      "designs": 10,
+      "nodes": 133093.33333333334,
+      "edges": 315046.6666666667,
+      "labels": 288.3333333333333,
+      "graph_directory_bytes": 228067850.0,
+      "training_seconds": {
+        "gcn": 88.18097992334515,
+        "graphsage": 78.6398399155587,
+        "gin": 131.52623993810266,
+        "slackgnn": 202.82529001124203
+      },
+      "resident_tensor_bytes": 31484320.0
+    },
+    {
+      "designs": 20,
+      "nodes": 266186.6666666667,
+      "edges": 630093.3333333334,
+      "labels": 576.6666666666666,
+      "graph_directory_bytes": 456135700.0,
+      "training_seconds": {
+        "gcn": 372.31969300967955,
+        "graphsage": 332.03487964347005,
+        "gin": 555.333013071989,
+        "slackgnn": 856.373446714133
+      },
+      "resident_tensor_bytes": 62968640.0
+    },
+    {
+      "designs": 50,
+      "nodes": 665466.6666666666,
+      "edges": 1575233.3333333333,
+      "labels": 1441.6666666666667,
+      "graph_directory_bytes": 1140339250.0,
+      "training_seconds": {
+        "gcn": 2400.482231246618,
+        "graphsage": 2140.75119770132,
+        "gin": 3580.43653164835,
+        "slackgnn": 5521.3551169727
+      },
+      "resident_tensor_bytes": 157421600.0
+    }
+  ]
+}

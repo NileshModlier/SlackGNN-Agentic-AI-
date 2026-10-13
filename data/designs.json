@@ -6,6 +6,7 @@
     "uart",
     "spi",
     "jpeg",
-    "riscv32i"
+    "riscv32i",
+    "chameleon"
   ]
 }

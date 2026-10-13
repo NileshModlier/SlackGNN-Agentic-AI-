@@ -1,0 +1,37 @@
+{
+  "largest_runtime_bottleneck": {
+    "design": "jpeg",
+    "train_seconds": 0.2590746000641957,
+    "share_of_slackgnn_epoch": 0.3831986633173347,
+    "dominant_pass": "backward",
+    "forward_seconds": 0.28546300006564707,
+    "backward_seconds": 0.339663999970071
+  },
+  "largest_memory_bottleneck": {
+    "design": "jpeg",
+    "pytorch_step_bytes": 50968368,
+    "dataset_tensor_bytes": 8401440
+  },
+  "fastest_model": "graphsage",
+  "most_efficient_model": "graphsage",
+  "best_accuracy_per_second_model": "gcn",
+  "accuracy_per_second": [
+    {
+      "model": "gcn",
+      "f1_per_protocol_second": 0.01973214633714169
+    },
+    {
+      "model": "graphsage",
+      "f1_per_protocol_second": 0.012716200860451554
+    },
+    {
+      "model": "gin",
+      "f1_per_protocol_second": 0.011911438108501794
+    },
+    {
+      "model": "slackgnn",
+      "f1_per_protocol_second": 0.01194553767295415
+    }
+  ],
+  "complexity": "O(E)"
+}

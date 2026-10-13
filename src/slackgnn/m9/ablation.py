@@ -28,6 +28,7 @@ class AblatedSlackGNN(SlackGNN):
         drop_timing: bool = False,
         drop_edges: bool = False,
         uniform_attention: bool = False,
+        zero_timing_columns: tuple[int, ...] = (),
     ) -> None:
         super().__init__(
             node_channels,
@@ -40,6 +41,7 @@ class AblatedSlackGNN(SlackGNN):
         self.drop_timing = drop_timing
         self.drop_edges = drop_edges
         self.uniform_attention = uniform_attention
+        self.zero_timing_columns = zero_timing_columns
 
     def forward(
         self,
@@ -48,6 +50,10 @@ class AblatedSlackGNN(SlackGNN):
         edge_attr: torch.Tensor,
         timing_features: torch.Tensor,
     ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+        if self.zero_timing_columns:
+            timing_features = timing_features.clone()
+            for column in self.zero_timing_columns:
+                timing_features[:, column] = 0
         timing = self.timing_encoder(timing_features)
         if self.drop_timing:
             timing = torch.zeros_like(timing)

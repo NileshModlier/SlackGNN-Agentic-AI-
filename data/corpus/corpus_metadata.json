@@ -1,8 +1,8 @@
 {
-  "total_designs": 5,
-  "total_nodes": 76675,
-  "total_edges": 182106,
-  "total_labels": 26,
+  "total_designs": 6,
+  "total_nodes": 79856,
+  "total_edges": 189028,
+  "total_labels": 32,
   "designs": [
     {
       "design_name": "gcd",
@@ -42,6 +42,14 @@
       "edge_count": 15884,
       "label_count": 4,
       "positive_slack_count": 2,
+      "negative_slack_count": 2
+    },
+    {
+      "design_name": "chameleon",
+      "node_count": 3181,
+      "edge_count": 6922,
+      "label_count": 6,
+      "positive_slack_count": 4,
       "negative_slack_count": 2
     }
   ],

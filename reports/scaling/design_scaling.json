@@ -1,0 +1,85 @@
+{
+  "designs": [
+    {
+      "design": "gcd",
+      "nodes": 527,
+      "edges": 928,
+      "endpoint_labels": 5,
+      "expanded_labels": 27,
+      "label_count": 27,
+      "graph_directory_bytes": 769299,
+      "pyg_graph_bytes": 30049,
+      "dataset_bytes": 45803,
+      "tensor_bytes": 106776
+    },
+    {
+      "design": "aes",
+      "nodes": 15868,
+      "edges": 38215,
+      "endpoint_labels": 4,
+      "expanded_labels": 20,
+      "label_count": 20,
+      "graph_directory_bytes": 25710575,
+      "pyg_graph_bytes": 979361,
+      "dataset_bytes": 1494960,
+      "tensor_bytes": 3790312
+    },
+    {
+      "design": "ibex",
+      "nodes": 18000,
+      "edges": 44436,
+      "endpoint_labels": 7,
+      "expanded_labels": 42,
+      "label_count": 42,
+      "graph_directory_bytes": 29570552,
+      "pyg_graph_bytes": 1128161,
+      "dataset_bytes": 1836967,
+      "tensor_bytes": 4360416
+    },
+    {
+      "design": "jpeg",
+      "nodes": 36283,
+      "edges": 82643,
+      "endpoint_labels": 6,
+      "expanded_labels": 23,
+      "label_count": 23,
+      "graph_directory_bytes": 53302729,
+      "pyg_graph_bytes": 2159713,
+      "dataset_bytes": 3453934,
+      "tensor_bytes": 8401440
+    },
+    {
+      "design": "riscv32i",
+      "nodes": 5997,
+      "edges": 15884,
+      "endpoint_labels": 4,
+      "expanded_labels": 33,
+      "label_count": 33,
+      "graph_directory_bytes": 10322073,
+      "pyg_graph_bytes": 395105,
+      "dataset_bytes": 604334,
+      "tensor_bytes": 1513192
+    },
+    {
+      "design": "chameleon",
+      "nodes": 3181,
+      "edges": 6922,
+      "endpoint_labels": 6,
+      "expanded_labels": 28,
+      "label_count": 28,
+      "graph_directory_bytes": 17165482,
+      "pyg_graph_bytes": 186913,
+      "dataset_bytes": 305433,
+      "tensor_bytes": 718456
+    }
+  ],
+  "totals": {
+    "design_count": 6,
+    "nodes": 79856,
+    "edges": 189028,
+    "label_count": 173,
+    "graph_directory_bytes": 136840710,
+    "pyg_graph_bytes": 4879302,
+    "dataset_bytes": 7741431
+  }
+}

@@ -23,6 +23,25 @@ def test_uniform_attention_is_inverse_degree() -> None:
     assert torch.allclose(attention[2], torch.tensor(0.5))
 
 
+def test_zeroing_path_membership_changes_the_logit() -> None:
+    torch.manual_seed(0)
+    full = AblatedSlackGNN(4, 2, 3, hidden_channels=8, dropout=0.0)
+    ablated = AblatedSlackGNN(4, 2, 3, hidden_channels=8, dropout=0.0, zero_timing_columns=(1,))
+    ablated.load_state_dict(full.state_dict())
+    full.eval()
+    ablated.eval()
+    node_features = torch.randn(5, 4)
+    edge_index = torch.tensor([[0, 1, 2, 3], [1, 2, 3, 4]])
+    edge_attr = torch.randn(4, 2)
+    timing = torch.randn(5, 3)
+    timing[:, 1] = 4.0
+
+    full_logits, _, _, _ = full(node_features, edge_index, edge_attr, timing)
+    ablated_logits, _, _, _ = ablated(node_features, edge_index, edge_attr, timing)
+
+    assert not torch.allclose(full_logits, ablated_logits)
+
+
 def test_dropping_timing_context_changes_the_logit() -> None:
     torch.manual_seed(0)
     full = AblatedSlackGNN(4, 2, 3, hidden_channels=8, dropout=0.0)

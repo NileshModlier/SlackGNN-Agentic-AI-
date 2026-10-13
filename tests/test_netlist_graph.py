@@ -128,6 +128,47 @@ def test_hierarchy_root_is_used_when_the_requested_top_is_absent() -> None:
     assert graph.has_edge("a", "u/g")
 
 
+def test_black_box_bus_connects_each_bit() -> None:
+    text = """
+    module top (a, b, y0, y1);
+      input a;
+      input b;
+      output y0;
+      output y1;
+      DFFRAM_4K ram (.A({a, b}), .Do({y0, y1}));
+    endmodule
+    """
+    graph, errors = extract_netlist_graph(text, top="top")
+    assert errors == ()
+    assert graph is not None
+    assert graph.has_edge("a", "ram")
+    assert graph.has_edge("b", "ram")
+    assert graph.has_edge("ram", "y0")
+    assert graph.has_edge("ram", "y1")
+
+
+def test_shared_ahb_master_pins_are_driven_by_the_core() -> None:
+    text = """
+    module top (clk, y, irq_out);
+      input clk;
+      output y;
+      output irq_out;
+      ibex_wrapper core (.HCLK(clk), .HADDR(addr), .IRQ(irq));
+      apb_sys_0 periph (.HCLK(clk), .HADDR(addr), .IRQ(irq));
+      sky130_fd_sc_hd__buf_1 addr_buf (.A(addr), .X(y));
+      sky130_fd_sc_hd__buf_1 irq_buf (.A(irq), .X(irq_out));
+    endmodule
+    """
+    graph, errors = extract_netlist_graph(text, top="top")
+    assert errors == ()
+    assert graph is not None
+    assert graph.has_edge("core", "addr_buf")
+    assert graph.has_edge("core", "periph")
+    assert graph.has_edge("periph", "irq_buf")
+    assert graph.has_edge("periph", "core")
+    assert not graph.has_edge("periph", "addr_buf")
+
+
 def test_width_mismatch_is_reported() -> None:
     text = """
     module top (a, y);

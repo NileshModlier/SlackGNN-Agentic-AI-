@@ -1,0 +1,256 @@
+{
+  "models": [
+    {
+      "model": "gcn",
+      "parameter_bytes": 772,
+      "dataset_tensor_bytes": 18890592,
+      "peak_traced_bytes": 14369612,
+      "process_working_set_bytes": 467681280,
+      "designs": [
+        {
+          "design": "gcd",
+          "nodes": 527,
+          "edges": 928,
+          "dataset_tensor_bytes": 106776,
+          "peak_traced_bytes": 210236,
+          "pytorch_step_bytes": 210236,
+          "working_set_bytes": 411062272
+        },
+        {
+          "design": "aes",
+          "nodes": 15868,
+          "edges": 38215,
+          "dataset_tensor_bytes": 3790312,
+          "peak_traced_bytes": 6285272,
+          "pytorch_step_bytes": 6285272,
+          "working_set_bytes": 433176576
+        },
+        {
+          "design": "ibex",
+          "nodes": 18000,
+          "edges": 44436,
+          "dataset_tensor_bytes": 4360416,
+          "peak_traced_bytes": 7129544,
+          "pytorch_step_bytes": 7129544,
+          "working_set_bytes": 446029824
+        },
+        {
+          "design": "jpeg",
+          "nodes": 36283,
+          "edges": 82643,
+          "dataset_tensor_bytes": 8401440,
+          "peak_traced_bytes": 14369612,
+          "pytorch_step_bytes": 14369612,
+          "working_set_bytes": 467230720
+        },
+        {
+          "design": "riscv32i",
+          "nodes": 5997,
+          "edges": 15884,
+          "dataset_tensor_bytes": 1513192,
+          "peak_traced_bytes": 2376356,
+          "pytorch_step_bytes": 2376356,
+          "working_set_bytes": 467431424
+        },
+        {
+          "design": "chameleon",
+          "nodes": 3181,
+          "edges": 6922,
+          "dataset_tensor_bytes": 718456,
+          "peak_traced_bytes": 1261220,
+          "pytorch_step_bytes": 1261220,
+          "working_set_bytes": 467681280
+        }
+      ]
+    },
+    {
+      "model": "graphsage",
+      "parameter_bytes": 1412,
+      "dataset_tensor_bytes": 18890592,
+      "peak_traced_bytes": 19595644,
+      "process_working_set_bytes": 467828736,
+      "designs": [
+        {
+          "design": "gcd",
+          "nodes": 527,
+          "edges": 928,
+          "dataset_tensor_bytes": 106776,
+          "peak_traced_bytes": 287404,
+          "pytorch_step_bytes": 287404,
+          "working_set_bytes": 467816448
+        },
+        {
+          "design": "aes",
+          "nodes": 15868,
+          "edges": 38215,
+          "dataset_tensor_bytes": 3790312,
+          "peak_traced_bytes": 8571544,
+          "pytorch_step_bytes": 8571544,
+          "working_set_bytes": 467828736
+        },
+        {
+          "design": "ibex",
+          "nodes": 18000,
+          "edges": 44436,
+          "dataset_tensor_bytes": 4360416,
+          "peak_traced_bytes": 9722824,
+          "pytorch_step_bytes": 9722824,
+          "working_set_bytes": 467828736
+        },
+        {
+          "design": "jpeg",
+          "nodes": 36283,
+          "edges": 82643,
+          "dataset_tensor_bytes": 8401440,
+          "peak_traced_bytes": 19595644,
+          "pytorch_step_bytes": 19595644,
+          "working_set_bytes": 467828736
+        },
+        {
+          "design": "riscv32i",
+          "nodes": 5997,
+          "edges": 15884,
+          "dataset_tensor_bytes": 1513192,
+          "peak_traced_bytes": 3241204,
+          "pytorch_step_bytes": 3241204,
+          "working_set_bytes": 467828736
+        },
+        {
+          "design": "chameleon",
+          "nodes": 3181,
+          "edges": 6922,
+          "dataset_tensor_bytes": 718456,
+          "peak_traced_bytes": 1720564,
+          "pytorch_step_bytes": 1720564,
+          "working_set_bytes": 467828736
+        }
+      ]
+    },
+    {
+      "model": "gin",
+      "parameter_bytes": 13444,
+      "dataset_tensor_bytes": 18890592,
+      "peak_traced_bytes": 19329444,
+      "process_working_set_bytes": 468115456,
+      "designs": [
+        {
+          "design": "gcd",
+          "nodes": 527,
+          "edges": 928,
+          "dataset_tensor_bytes": 106776,
+          "peak_traced_bytes": 307252,
+          "pytorch_step_bytes": 307252,
+          "working_set_bytes": 467935232
+        },
+        {
+          "design": "aes",
+          "nodes": 15868,
+          "edges": 38215,
+          "dataset_tensor_bytes": 3790312,
+          "peak_traced_bytes": 10499768,
+          "pytorch_step_bytes": 10499768,
+          "working_set_bytes": 467464192
+        },
+        {
+          "design": "ibex",
+          "nodes": 18000,
+          "edges": 44436,
+          "dataset_tensor_bytes": 4360416,
+          "peak_traced_bytes": 11906888,
+          "pytorch_step_bytes": 11906888,
+          "working_set_bytes": 468115456
+        },
+        {
+          "design": "jpeg",
+          "nodes": 36283,
+          "edges": 82643,
+          "dataset_tensor_bytes": 8401440,
+          "peak_traced_bytes": 19329444,
+          "pytorch_step_bytes": 19329444,
+          "working_set_bytes": 465100800
+        },
+        {
+          "design": "riscv32i",
+          "nodes": 5997,
+          "edges": 15884,
+          "dataset_tensor_bytes": 1513192,
+          "peak_traced_bytes": 3217292,
+          "pytorch_step_bytes": 3217292,
+          "working_set_bytes": 464773120
+        },
+        {
+          "design": "chameleon",
+          "nodes": 3181,
+          "edges": 6922,
+          "dataset_tensor_bytes": 718456,
+          "peak_traced_bytes": 2126348,
+          "pytorch_step_bytes": 2126348,
+          "working_set_bytes": 465358848
+        }
+      ]
+    },
+    {
+      "model": "slackgnn",
+      "parameter_bytes": 21800,
+      "dataset_tensor_bytes": 18890592,
+      "peak_traced_bytes": 50968368,
+      "process_working_set_bytes": 709533696,
+      "designs": [
+        {
+          "design": "gcd",
+          "nodes": 527,
+          "edges": 928,
+          "dataset_tensor_bytes": 106776,
+          "peak_traced_bytes": 709184,
+          "pytorch_step_bytes": 709184,
+          "working_set_bytes": 466247680
+        },
+        {
+          "design": "aes",
+          "nodes": 15868,
+          "edges": 38215,
+          "dataset_tensor_bytes": 3790312,
+          "peak_traced_bytes": 22878592,
+          "pytorch_step_bytes": 22878592,
+          "working_set_bytes": 547270656
+        },
+        {
+          "design": "ibex",
+          "nodes": 18000,
+          "edges": 44436,
+          "dataset_tensor_bytes": 4360416,
+          "peak_traced_bytes": 23938192,
+          "pytorch_step_bytes": 23938192,
+          "working_set_bytes": 564535296
+        },
+        {
+          "design": "jpeg",
+          "nodes": 36283,
+          "edges": 82643,
+          "dataset_tensor_bytes": 8401440,
+          "peak_traced_bytes": 50968368,
+          "pytorch_step_bytes": 50968368,
+          "working_set_bytes": 707084288
+        },
+        {
+          "design": "riscv32i",
+          "nodes": 5997,
+          "edges": 15884,
+          "dataset_tensor_bytes": 1513192,
+          "peak_traced_bytes": 9065696,
+          "pytorch_step_bytes": 9065696,
+          "working_set_bytes": 707907584
+        },
+        {
+          "design": "chameleon",
+          "nodes": 3181,
+          "edges": 6922,
+          "dataset_tensor_bytes": 718456,
+          "peak_traced_bytes": 4420288,
+          "pytorch_step_bytes": 4420288,
+          "working_set_bytes": 709533696
+        }
+      ]
+    }
+  ]
+}
