@@ -2,37 +2,70 @@
 
 Completed work is in the tree. Future milestones are the next research increments. They are sequenced so each one can land without rewriting the published six-design table.
 
+```mermaid
+flowchart LR
+    subgraph done["Completed"]
+        direction TB
+        v1["v1.0<br/>Dataset pipeline"] --> v2["v2.0<br/>SlackGNN architecture"] --> v3["v3.0<br/>Research validation"]
+    end
+    subgraph next["Future milestones"]
+        direction TB
+        d["More designs"]
+        l["More labels"]
+        p["Additional PDKs"]
+        e["Edge feature<br/>improvements"]
+        s["SPEF-aware models"]
+    end
+    v3 --> d & l & p & e & s
+
+    classDef past fill:#f6f8fa,stroke:#8c959f,color:#1f2328
+    classDef now fill:#c47b2b,stroke:#965616,color:#ffffff
+    classDef future fill:#f8ead8,stroke:#c47b2b,stroke-dasharray:4 3,color:#1f2328
+    class v1,v2 past
+    class v3 now
+    class d,l,p,e,s future
+```
+
 ## Completed milestones
 
 ### Dataset pipeline (v1.0)
 
-- OpenROAD finish import for the curated GCD design
-- Timing-report parser, signal-flow graph, and PyTorch Geometric dataset
-- Corpus layout under `data/corpus/`
+- [x] OpenROAD finish import for the curated GCD design
+- [x] Timing-report parser, signal-flow graph, and PyTorch Geometric dataset
+- [x] Corpus layout under `data/corpus/`
 
 ### SlackGNN architecture (v2.0)
 
-- Feature engineering with slack withheld from the encoder
-- Attention message passing and multitask violation and slack heads
-- GCN, GraphSAGE, and GIN baselines
-- Training, metrics, and explainability on the first four designs
+- [x] Feature engineering with slack withheld from the encoder
+- [x] Attention message passing and multitask violation and slack heads
+- [x] GCN, GraphSAGE, and GIN baselines
+- [x] Training, metrics, and explainability on the first four designs
 
 ### Research validation (v3.0)
 
-- M9.1 Design discovery
-- M9.2 Corpus expansion to gcd, aes, ibex, jpeg, riscv32i, and chameleon
-- M9.3 Label expansion to 173 route labels
-- M9.4 Generalization benchmark
-- M9.5 Ablation studies
-- M9.6 Robustness analysis
-- M9.7 Scaling analysis
-- M9.8 Publication figures
-- M9.9 Final research report, executive summary, and research highlights
-- M9.10 Release preparation: README, index, structure, changelog, roadmap, contributing guide, release notes, and cleanup report
+- [x] M9.1 Design discovery
+- [x] M9.2 Corpus expansion to gcd, aes, ibex, jpeg, riscv32i, and chameleon
+- [x] M9.3 Label expansion to 173 route labels
+- [x] M9.4 Generalization benchmark
+- [x] M9.5 Ablation studies
+- [x] M9.6 Robustness analysis
+- [x] M9.7 Scaling analysis
+- [x] M9.8 Publication figures
+- [x] M9.9 Final research report, executive summary, and research highlights
+- [x] M9.10 Release preparation: README, index, structure, changelog, roadmap, contributing guide, release notes, and cleanup report
 
-The published endpoint result is SlackGNN F1 0.8076, ROC-AUC 0.9583, MAE 0.6919 ns, RMSE 0.8667 ns.
+> [!NOTE]
+> The published endpoint result is SlackGNN F1 0.8076, ROC-AUC 0.9583, MAE 0.6919 ns, RMSE 0.8667 ns.
 
 ## Future milestones
+
+| Milestone | Why it matters | Evidence from v3.0 |
+| --- | --- | --- |
+| [More designs](#more-designs) | New endpoints, not just bigger graphs | Six designs are the smallest stable corpus |
+| [More labels](#more-labels) | Real supervision beyond copied route slack | Collapse at 10% of the expanded labels, stable at 25% |
+| [Additional PDKs](#additional-pdks) | Test transfer across cell libraries | Every v3.0 design is sky130hd |
+| [Edge feature improvements](#edge-feature-improvements) | Richer structural channels | Edge ablation left ROC-AUC at 0.9583 |
+| [SPEF-aware models](#spef-aware-models) | Physical wire delay on each edge | SPEF is imported and unused by the encoder |
 
 ### More designs
 

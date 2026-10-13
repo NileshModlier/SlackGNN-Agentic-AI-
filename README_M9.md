@@ -1,5 +1,13 @@
 # SlackGNN phase M9
 
+<p>
+  <img alt="Earlier experiment" src="https://img.shields.io/badge/record-phase%20M9-8c959f?style=flat-square">
+  <img alt="Superseded by v3.0" src="https://img.shields.io/badge/superseded%20by-v3.0%20six--design%20study-c47b2b?style=flat-square">
+</p>
+
+> [!WARNING]
+> **Historical record.** This page documents an earlier stage of SlackGNN and is kept as the record of that run. The published v3.0 result is the six-design study in [docs/slackgnn_final_research_report.md](docs/slackgnn_final_research_report.md): F1 0.8076, ROC-AUC 0.9583, MAE 0.6919 ns, RMSE 0.8667 ns.
+
 M9 expands supervision by copying reported slack along signal-flow routes, then measures leave-one-design-out SlackGNN on the designs that already have `pyg/graph.pt`. It does not modify the dataset builders or the M8 model file, and it does not start an OpenROAD flow.
 
 ## Reproduce

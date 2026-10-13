@@ -1,5 +1,31 @@
 # GCD dataset
 
+<p>
+  <img alt="Earlier experiment" src="https://img.shields.io/badge/record-M1%20GCD%20import-8c959f?style=flat-square">
+  <img alt="Superseded by v3.0" src="https://img.shields.io/badge/superseded%20by-v3.0%20six--design%20study-c47b2b?style=flat-square">
+</p>
+
+> [!WARNING]
+> **Historical record.** This page documents an earlier stage of SlackGNN and is kept as the record of that run. The published v3.0 result is the six-design study in [docs/slackgnn_final_research_report.md](docs/slackgnn_final_research_report.md): F1 0.8076, ROC-AUC 0.9583, MAE 0.6919 ns, RMSE 0.8667 ns.
+
+```mermaid
+flowchart LR
+    imp["import_gcd_dataset.py<br/>copy finish files"] --> parse["parse_timing_report.py<br/>path_labels.csv"]
+    imp --> ext["extract_graph.py<br/>netlist_graph.pkl"]
+    parse --> build["build_dataset.py<br/>labeled_graph.pkl"]
+    ext --> build
+    build --> val["dataset_validation.py<br/>validation_report.json"]
+    build --> pyg["build_pyg_dataset.py<br/>pyg/graph.pt"]
+    pyg --> corpus["build_corpus.py<br/>data/corpus/"]
+
+    classDef step fill:#f6f8fa,stroke:#8c959f,color:#1f2328
+    classDef out fill:#f8ead8,stroke:#c47b2b,color:#1f2328
+    class imp,parse,ext,build,val step
+    class pyg,corpus out
+```
+
+<sub>`scripts/process_design.py` runs the parse, extract, build, and PyG stages for one design in a single command.</sub>
+
 ## Dataset source
 
 OpenROAD GCD benchmark.
@@ -94,4 +120,7 @@ A successful run adds the design to `data/designs.json` if it is not already lis
 python scripts\process_design.py aes
 ```
 
-The repository does not yet contain a graph neural network or training code.
+> [!NOTE]
+> The repository does not yet contain a graph neural network or training code.
+>
+> *That sentence describes the repository at the time of this import. The model and its training code arrived in v2.0. See [CHANGELOG.md](CHANGELOG.md).*

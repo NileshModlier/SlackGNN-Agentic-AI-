@@ -1,5 +1,13 @@
 # SlackGNN phase M8
 
+<p>
+  <img alt="Earlier experiment" src="https://img.shields.io/badge/record-phase%20M8-8c959f?style=flat-square">
+  <img alt="Superseded by v3.0" src="https://img.shields.io/badge/superseded%20by-v3.0%20six--design%20study-c47b2b?style=flat-square">
+</p>
+
+> [!WARNING]
+> **Historical record.** This page documents an earlier stage of SlackGNN and is kept as the record of that run. The published v3.0 result is the six-design study in [docs/slackgnn_final_research_report.md](docs/slackgnn_final_research_report.md): F1 0.8076, ROC-AUC 0.9583, MAE 0.6919 ns, RMSE 0.8667 ns.
+
 SlackGNN is a timing-aware graph network for endpoint slack and timing-violation prediction. It trains on the published `gcd`, `aes`, `ibex`, and `jpeg` graphs. This phase does not change the dataset-generation pipeline.
 
 ## Architecture overview

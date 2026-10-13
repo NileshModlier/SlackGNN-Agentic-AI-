@@ -1,0 +1,226 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1508" viewBox="0 0 1200 1508" role="img" aria-labelledby="ttl dsc">
+  <title id="ttl">SlackGNN architecture</title>
+  <desc id="dsc">Node, edge and timing features are encoded separately, combined in two timing-aware GraphSAGE attention layers, and read by a shared embedding that feeds a violation head and a slack head. Arrival time, required time and slack are supervision targets only and never reach an encoder.</desc>
+  <defs>
+    <style>
+      svg { --bg:#ffffff; --ink:#1f2328; --muted:#59636e; --faint:#7d8590; --line:#d1d9e0; --card:#f6f8fa;
+            --panel:#fdf7f0; --panelLine:#e7c9a5; --accent:#c47b2b; --accentInk:#965616; --accentSoft:#f8ead8;
+            --guard:#b4413c; --guardSoft:#fcefed; --arrow:#6e7781; }
+      svg[data-theme="dark"] { --bg:#0d1117; --ink:#e6edf3; --muted:#9198a1; --faint:#7d8590; --line:#30363d; --card:#151b23;
+            --panel:#1b1610; --panelLine:#5a4023; --accent:#e29a4c; --accentInk:#f2bd80; --accentSoft:#2e2112;
+            --guard:#f0776c; --guardSoft:#2a1513; --arrow:#8b949e; }
+      text { font-family: Inter, 'Segoe UI', system-ui, sans-serif; fill: var(--ink); }
+      .h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.3px; }
+      .sub { font-size: 16px; fill: var(--muted); }
+      .col { font-size: 12.5px; font-weight: 600; letter-spacing: 1.6px; fill: var(--muted); }
+      .ct { font-size: 17px; font-weight: 600; }
+      .cs { font-size: 16px; font-weight: 600; }
+      .cb { font-size: 14.5px; fill: var(--muted); }
+      .cf { font-size: 13px; fill: var(--faint); }
+      .chip { font-size: 13px; font-weight: 600; fill: var(--muted); }
+      .chipA { font-size: 13px; font-weight: 600; fill: var(--accentInk); }
+      .mono { font-family: 'DejaVu Sans Mono', 'SFMono-Regular', Consolas, monospace; font-size: 15px; }
+      .acc { fill: var(--accentInk); }
+      .grd { fill: var(--guard); }
+      .card { fill: var(--card); stroke: var(--line); stroke-width: 1.2; }
+      .cardA { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.4; }
+      .panel { fill: var(--panel); stroke: var(--panelLine); stroke-width: 1.4; }
+      .inner { fill: var(--bg); stroke: var(--line); stroke-width: 1.2; }
+      .guardBox { fill: var(--guardSoft); stroke: var(--guard); stroke-width: 1.2; stroke-dasharray: 5 4; }
+      .ghost { fill: none; stroke: var(--line); stroke-width: 1.2; stroke-dasharray: 5 4; }
+      .wire { fill: none; stroke: var(--arrow); stroke-width: 1.6; }
+      .wireA { fill: none; stroke: var(--accent); stroke-width: 1.8; }
+      .badge { fill: var(--bg); stroke: var(--line); stroke-width: 1.2; }
+      .badgeA { fill: var(--accent); stroke: none; }
+      .node { fill: var(--bg); stroke: var(--ink); stroke-width: 1.5; }
+      .nodeA { fill: var(--accent); stroke: var(--accent); stroke-width: 1.5; }
+      .ah { fill: var(--arrow); }
+      .ahA { fill: var(--accent); }
+      .bg { fill: var(--bg); }
+      .rule { stroke: var(--line); stroke-width: 1; }
+    </style>
+    <marker id="m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah" d="M0,1 L10,5 L0,9 z"/></marker>
+    <marker id="mA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ahA" d="M0,1 L10,5 L0,9 z"/></marker>
+  </defs>
+
+  <rect class="bg" width="1200" height="1508"/>
+
+  <!-- Title -->
+  <text class="h1" x="40" y="50">SlackGNN architecture</text>
+  <text class="sub" x="40" y="78">Node-level multitask GNN on the driver → load signal-flow graph · hidden width 32 · dropout 0.25</text>
+
+  <!-- ===== 1 · Inputs ===== -->
+  <text class="col" x="40" y="112">1 · INPUTS</text>
+
+  <rect class="card" x="40" y="126" width="360" height="182" rx="12"/>
+  <circle class="badge" cx="64" cy="152" r="12"/><text x="64" y="156.5" text-anchor="middle" font-size="12.5" font-weight="700">N</text>
+  <text class="ct" x="86" y="158">Node features</text>
+  <text class="chip" x="380" y="157" text-anchor="end">10 ch</text>
+  <text class="cb" x="58" y="188">gate type, one-hot ×4</text>
+  <text class="cf" x="70" y="208">input · output · register · combinational</text>
+  <text class="cb" x="58" y="231">register flag</text>
+  <text class="cb" x="58" y="252">fanin · fanout</text>
+  <text class="cb" x="58" y="273">in-degree · out-degree</text>
+  <text class="cb" x="58" y="294">logic depth</text>
+
+  <rect class="card" x="420" y="126" width="360" height="182" rx="12"/>
+  <circle class="badge" cx="444" cy="152" r="12"/><text x="444" y="156.5" text-anchor="middle" font-size="12.5" font-weight="700">E</text>
+  <text class="ct" x="466" y="158">Edge features</text>
+  <text class="chip" x="760" y="157" text-anchor="end">10 ch</text>
+  <text class="cb" x="438" y="188">source class, one-hot ×4</text>
+  <text class="cb" x="438" y="209">target class, one-hot ×4</text>
+  <text class="cb" x="438" y="230">net-delay proxy: log1p(driver fanout)</text>
+  <text class="cb" x="438" y="251">load logic depth</text>
+  <text class="cf" x="438" y="290">SPEF resistance and capacitance are not joined</text>
+
+  <rect class="cardA" x="800" y="126" width="360" height="182" rx="12"/>
+  <circle class="badgeA" cx="824" cy="152" r="12"/><text x="824" y="156.5" text-anchor="middle" font-size="12.5" font-weight="700" style="fill:#ffffff">T</text>
+  <text class="ct" x="846" y="158">Timing context</text>
+  <text class="chipA" x="1140" y="157" text-anchor="end">3 ch</text>
+  <text class="cb" x="818" y="188">normalized logic depth</text>
+  <text class="cb" x="818" y="209">reported-path membership</text>
+  <text class="cb" x="818" y="230">source distance</text>
+  <text class="cf" x="818" y="270">membership comes from the path table;</text>
+  <text class="cf" x="818" y="290">slack itself never enters</text>
+
+  <!-- ===== 2 · Encoders ===== -->
+  <text class="col" x="40" y="338">2 · ENCODERS</text>
+  <path class="wire" d="M220,308 L220,348" marker-end="url(#m)"/>
+  <path class="wire" d="M600,308 L600,348" marker-end="url(#m)"/>
+  <path class="wireA" d="M980,308 L980,348" marker-end="url(#mA)"/>
+
+  <rect class="card" x="100" y="352" width="240" height="58" rx="10"/>
+  <text class="cs" x="220" y="377" text-anchor="middle">Node encoder</text>
+  <text class="cf" x="220" y="398" text-anchor="middle">10 ch → 32</text>
+
+  <rect class="card" x="480" y="352" width="240" height="58" rx="10"/>
+  <text class="cs" x="600" y="377" text-anchor="middle">Edge encoder</text>
+  <text class="cf" x="600" y="398" text-anchor="middle">10 ch → edge state</text>
+
+  <rect class="cardA" x="860" y="352" width="240" height="58" rx="10"/>
+  <text class="cs" x="980" y="377" text-anchor="middle">Timing encoder</text>
+  <text class="cf" x="980" y="398" text-anchor="middle">3 ch → timing state</text>
+
+  <path class="wire" d="M220,410 L220,456" marker-end="url(#m)"/>
+  <path class="wire" d="M600,410 L600,456" marker-end="url(#m)"/>
+  <path class="wireA" d="M980,410 L980,456" marker-end="url(#mA)"/>
+  <text class="cf" x="230" y="440">node state</text>
+  <text class="cf" x="610" y="440">edge state → scorer</text>
+  <text class="cf" x="990" y="440">timing state → h⁰ and scorer</text>
+
+  <!-- ===== 3 · Message passing ===== -->
+  <rect class="panel" x="40" y="460" width="1120" height="352" rx="16"/>
+  <circle class="badgeA" cx="66" cy="491" r="12"/><text x="66" y="495.5" text-anchor="middle" font-size="12.5" font-weight="700" style="fill:#ffffff">3</text>
+  <text x="88" y="497" font-size="18" font-weight="600">Timing-aware GraphSAGE layer</text>
+  <rect x="384" y="481" width="88" height="24" rx="12" style="fill:var(--accent)"/>
+  <text x="428" y="497.5" text-anchor="middle" font-size="13" font-weight="700" style="fill:#ffffff">× 2 layers</text>
+  <text class="cb" x="64" y="524">Attention-weighted aggregation of drivers into each load. Runs on every gate; the loss reads labeled nodes only.</text>
+
+  <rect class="inner" x="64" y="542" width="496" height="44" rx="10"/>
+  <text class="mono" x="312" y="569" text-anchor="middle">h⁰ = node encoding + timing encoding</text>
+
+  <rect class="inner" x="64" y="602" width="496" height="186" rx="10"/>
+  <text class="cs" x="82" y="629">Score network</text>
+  <text class="cb" x="82" y="656">driver embedding h<tspan baseline-shift="sub" font-size="10.5">u</tspan></text>
+  <text class="cb" x="82" y="678">load embedding h<tspan baseline-shift="sub" font-size="10.5">v</tspan></text>
+  <text class="cb" x="82" y="700">edge encoding</text>
+  <text class="cb" x="82" y="722">timing state of u and v</text>
+  <text class="cb" x="82" y="744">slack-magnitude gate</text>
+  <text class="cf" x="82" y="772">The gate is learned from the embedding, not the label.</text>
+
+  <!-- scores feed the attention weights -->
+  <path class="wire" d="M560,634 L658,634" marker-end="url(#m)"/>
+  <text class="cf" x="572" y="626">scores</text>
+
+  <text class="cf" x="680" y="560" text-anchor="middle">drivers of v</text>
+  <path d="M697,580 L860,626" style="fill:none;stroke:var(--ink);stroke-width:1.6;stroke-opacity:0.55"/>
+  <path d="M697,634 L858,634" style="fill:none;stroke:var(--accent);stroke-width:5"/>
+  <path d="M697,688 L860,642" style="fill:none;stroke:var(--ink);stroke-width:2.8;stroke-opacity:0.7"/>
+  <circle class="node" cx="680" cy="580" r="16"/><text x="680" y="585" text-anchor="middle" font-size="13" font-weight="600">u<tspan baseline-shift="sub" font-size="9.5">1</tspan></text>
+  <circle class="node" cx="680" cy="634" r="16"/><text x="680" y="639" text-anchor="middle" font-size="13" font-weight="600">u<tspan baseline-shift="sub" font-size="9.5">2</tspan></text>
+  <circle class="node" cx="680" cy="688" r="16"/><text x="680" y="693" text-anchor="middle" font-size="13" font-weight="600">u<tspan baseline-shift="sub" font-size="9.5">3</tspan></text>
+  <circle class="nodeA" cx="882" cy="634" r="22"/><text x="882" y="639.5" text-anchor="middle" font-size="15" font-weight="700" style="fill:#ffffff">v</text>
+  <text class="cf" x="882" y="676" text-anchor="middle">load</text>
+  <text class="cb" x="776" y="597" text-anchor="middle">α<tspan baseline-shift="sub" font-size="10">1</tspan></text>
+  <text class="acc" x="776" y="626" text-anchor="middle" font-size="15" font-weight="700">α<tspan baseline-shift="sub" font-size="10">2</tspan></text>
+  <text class="cb" x="776" y="684" text-anchor="middle">α<tspan baseline-shift="sub" font-size="10">3</tspan></text>
+  <text class="cf" x="944" y="606">edge width = attention weight α</text>
+  <text class="cf" x="944" y="628">softmax over the drivers of v</text>
+  <text class="cf" x="944" y="650">weights sum to 1</text>
+
+  <rect class="inner" x="600" y="716" width="536" height="72" rx="10"/>
+  <text class="mono" x="868" y="746" text-anchor="middle">h<tspan baseline-shift="sub" font-size="11">v</tspan> ← W·h<tspan baseline-shift="sub" font-size="11">v</tspan> + Σ<tspan baseline-shift="sub" font-size="11">u</tspan> α<tspan baseline-shift="sub" font-size="11">uv</tspan>·m<tspan baseline-shift="sub" font-size="11">u</tspan></text>
+  <text class="cf" x="868" y="773" text-anchor="middle">linear transform of the load plus attention-weighted driver messages</text>
+
+  <!-- ===== 4 · Heads and loss ===== -->
+  <text class="col" x="40" y="848">4 · HEADS AND LOSS</text>
+  <path class="wireA" d="M600,812 L600,856" marker-end="url(#mA)"/>
+  <rect class="cardA" x="440" y="860" width="320" height="54" rx="10"/>
+  <text class="cs" x="600" y="884" text-anchor="middle">Shared embedding</text>
+  <text class="cf" x="600" y="904" text-anchor="middle">one embedding, two tasks</text>
+
+  <path class="wire" d="M600,914 L600,934 L380,934 L380,952" marker-end="url(#m)"/>
+  <path class="wire" d="M600,934 L820,934 L820,952" marker-end="url(#m)"/>
+
+  <rect class="card" x="240" y="956" width="280" height="76" rx="10"/>
+  <text class="cs" x="380" y="982" text-anchor="middle">Violation head</text>
+  <text class="cb" x="380" y="1004" text-anchor="middle">1 logit → sigmoid</text>
+  <text class="cf" x="380" y="1023" text-anchor="middle">violation if slack &lt; 0</text>
+
+  <rect class="card" x="680" y="956" width="280" height="76" rx="10"/>
+  <text class="cs" x="820" y="982" text-anchor="middle">Slack head</text>
+  <text class="cb" x="820" y="1004" text-anchor="middle">slack in ns</text>
+  <text class="cf" x="820" y="1023" text-anchor="middle">regression</text>
+
+  <path class="wire" d="M380,1032 L380,1052" marker-end="url(#m)"/>
+  <path class="wire" d="M820,1032 L820,1052" marker-end="url(#m)"/>
+
+  <rect class="card" x="240" y="1056" width="280" height="66" rx="10"/>
+  <text class="cs" x="380" y="1082" text-anchor="middle">BCE with logits</text>
+  <text class="cb" x="380" y="1106" text-anchor="middle">pos_weight = met ÷ violations</text>
+
+  <rect class="card" x="680" y="1056" width="280" height="66" rx="10"/>
+  <text class="cs" x="820" y="1082" text-anchor="middle">Smooth L1</text>
+  <text class="cb" x="820" y="1106" text-anchor="middle">on slack in ns</text>
+
+  <path class="wire" d="M380,1122 L380,1144" marker-end="url(#m)"/>
+  <path class="wire" d="M820,1122 L820,1144" marker-end="url(#m)"/>
+
+  <rect class="cardA" x="240" y="1148" width="720" height="60" rx="10"/>
+  <text class="mono" x="600" y="1173" text-anchor="middle">total = α·BCE + β·SmoothL1</text>
+  <text class="cb" x="600" y="1197" text-anchor="middle">α = 1.0 · β = 0.5</text>
+
+  <!-- ===== Supervision and leakage guard ===== -->
+  <line class="rule" x1="40" y1="1240" x2="960" y2="1240"/>
+  <text class="col" x="40" y="1266">SUPERVISION AND LEAKAGE GUARD</text>
+
+  <rect class="guardBox" x="40" y="1282" width="720" height="104" rx="12"/>
+  <text class="grd" x="58" y="1310" font-size="16" font-weight="600">Leakage rule</text>
+  <text class="cb" x="58" y="1336">A channel that is a function of endpoint slack is excluded from every encoder.</text>
+  <text class="cb" x="58" y="1360">Membership says a node is on a reported route, not the sign or size of its slack.</text>
+
+  <rect class="card" x="800" y="1282" width="360" height="104" rx="12"/>
+  <text class="ct" x="818" y="1310">Finish timing report</text>
+  <text class="cb" x="818" y="1334">path table: startpoint · endpoint</text>
+  <text class="cb" x="818" y="1355">arrival · required · slack</text>
+  <text class="cf" x="818" y="1376">32 endpoints → 173 route labels</text>
+
+  <!-- targets go to the loss only -->
+  <path class="wire" d="M1000,1282 L1000,1178 L964,1178" marker-end="url(#m)"/>
+  <text class="cb" x="1012" y="1228">loss targets only</text>
+  <text class="grd" x="1012" y="1248" font-size="13" font-weight="600">never an encoder input</text>
+
+  <!-- membership is the only path-table signal the encoder sees -->
+  <path class="wireA" d="M1160,1318 L1182,1318 L1182,217 L1164,217" marker-end="url(#mA)" style="stroke-dasharray:5 4"/>
+  <text class="acc" x="1174" y="336" text-anchor="end" font-size="13" font-weight="600">membership only</text>
+
+  <rect class="ghost" x="40" y="1404" width="350" height="84" rx="12"/>
+  <text class="cs" x="58" y="1430">SPEF parasitics (R, C)</text>
+  <text class="cb" x="58" y="1453">stored with each design</text>
+  <text class="cf" x="58" y="1474">not joined to edge features in v3.0</text>
+
+  <rect class="ghost" x="410" y="1404" width="750" height="84" rx="12"/>
+  <text class="cs" x="428" y="1430">Baselines</text>
+  <text class="cb" x="428" y="1453">GCN · GraphSAGE · GIN read the one-hot node type (4 ch) only</text>
+  <text class="cf" x="428" y="1474">separate classification (BCE) and regression (MSE) heads · dropout 0.5</text>
+</svg>
